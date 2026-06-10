@@ -1,0 +1,5 @@
+$html = [IO.File]::ReadAllText('C:\Users\Pasha\efet-studio\index.html')
+$start = $html.IndexOf('id="rec1921353361"')
+$end = $html.IndexOf('id="rec1921353381"', $start)
+$block = $html.Substring($start, $end - $start)
+[IO.File]::WriteAllText('C:\Users\Pasha\efet-studio\tools\nav-hero-block.html', $block)
