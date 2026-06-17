@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 579" preserveAspectRatio="none">
+  <!-- left loop: from top, around sphere, down to the wave squiggle, then right -->
+  <path d="M108 6 C86 54 50 92 78 150 C106 208 44 242 70 300 C92 348 160 384 242 420 C304 448 382 462 442 468"
+        fill="none" stroke="rgba(185,185,185,0.8)" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- short curve from the cone toward the cube -->
+  <path d="M312 84 C392 110 462 130 542 140 C582 145 602 152 616 160"
+        fill="none" stroke="rgba(185,185,185,0.75)" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- long right-side curve down to bottom-right corner -->
+  <path d="M858 50 C818 140 780 222 800 302 C816 362 900 402 944 446 C962 462 992 468 1024 460"
+        fill="none" stroke="rgba(185,185,185,0.8)" stroke-width="1.6" stroke-linecap="round"/>
+</svg>
