@@ -38,3 +38,21 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           force_orphan: true
+
+      - name: Pages setup reminder
+        if: success()
+        run: |
+          {
+            echo "## GitHub Pages"
+            echo ""
+            echo "Build uploaded to the \`gh-pages\` branch."
+            echo ""
+            echo "If https://n6ssa.github.io/efet/ shows 404, enable Pages once:"
+            echo "1. Repo **Settings → Pages**"
+            echo "2. **Source:** Deploy from a branch"
+            echo "3. **Branch:** \`gh-pages\` / \`(root)\` → Save"
+            echo ""
+            echo "Private repos need **GitHub Pro** for Pages, or make the repo **Public**."
+            echo ""
+            echo "Site URL: https://n6ssa.github.io/efet/"
+          } >> "$GITHUB_STEP_SUMMARY"
