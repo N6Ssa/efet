@@ -68,9 +68,9 @@ body.t-body {
   backface-visibility: hidden;
 }
 
-/* SVG contains logo artwork; header bar + brand mark are HTML overlays */
+/* Logo is drawn inside the SVG chrome layer — no duplicate HTML image */
 .hero-logo-efet {
-  visibility: hidden;
+  display: none;
 }
 
 /* ── Background ── */
@@ -419,37 +419,17 @@ body.t-body {
     text-align: center;
     white-space: normal;
   }
-
-  .hero-logo-efet {
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(480 / var(--base-w) * 100cqw);
-  }
-
-  .hero-subtitle {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 88%;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-info-panel {
-    width: calc(100% - 24px);
-    grid-template-columns: repeat(3, 1fr);
-    gap: calc(3 / var(--base-w) * 100cqw);
-  }
-
-  .info-card {
-    font-size: calc(7.5 / var(--base-w) * 100cqw);
-    padding: calc(6 / var(--info-panel-h) * 100%) calc(6 / var(--base-w) * 100cqw);
-  }
 }
 
 @media (max-width: 639px) {
+  .hero-subtitle,
+  .hero-info-panel {
+    display: none !important;
+  }
+
   .hero {
-    height: max(720px, 100svh);
-    min-height: 720px;
+    height: max(520px, 85svh);
+    min-height: 520px;
   }
 
   .hero-header {
@@ -514,38 +494,6 @@ body.t-body {
     letter-spacing: 0.04em;
   }
 
-  .hero-logo-efet {
-    top: calc(148 / var(--base-h) * 100cqh);
-    width: calc(520 / var(--base-w) * 100cqw);
-    height: calc(162 / var(--base-h) * 100cqh);
-    visibility: visible;
-  }
-
-  .hero-subtitle {
-    top: calc(370 / var(--base-h) * 100cqh);
-    font-size: max(9px, 2.6vw);
-  }
-
-  .hero-subtitle__line {
-    white-space: normal;
-  }
-
-  .hero-info-panel {
-    top: auto;
-    bottom: calc(12 / var(--base-h) * 100cqh);
-    width: calc(100% - 16px);
-    height: auto;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-
-  .info-card {
-    min-height: 48px;
-    font-size: max(7px, 2.1vw);
-    line-height: 1.15;
-    border-radius: 3px;
-  }
-
   .efet-web-elements-fragment {
     opacity: 0.92;
   }
@@ -553,8 +501,8 @@ body.t-body {
 
 @media (max-width: 479px) {
   .hero {
-    min-height: 660px;
-    height: max(660px, 100svh);
+    min-height: 480px;
+    height: max(480px, 85svh);
   }
 
   .brand-mark {
@@ -570,15 +518,5 @@ body.t-body {
     max-width: 96px;
     font-size: 7px;
     padding: 0 6px;
-  }
-
-  .hero-info-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .info-card {
-    min-height: 40px;
-    justify-content: center;
-    text-align: center;
   }
 }
