@@ -14,4 +14,9 @@ html = html.replace(
   `$1${normalizedBase}/$2`
 );
 
+html = html.replace(
+  /(\s(?:src|href)=["'])\/(?!efet\/)(graphics\/)/g,
+  `$1${normalizedBase}/$2`
+);
+
 writeFileSync(file, html);
