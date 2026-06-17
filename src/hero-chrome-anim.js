@@ -3,6 +3,7 @@
  */
 export function initHeroChromeAnim(object) {
   const hero = document.querySelector('.hero');
+  const chromeStage = document.querySelector('.hero-chrome-stage');
   const doc = object?.contentDocument;
   if (!hero || !doc?.documentElement) return undefined;
 
@@ -11,6 +12,12 @@ export function initHeroChromeAnim(object) {
   if (!groups.length) return undefined;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isCoarsePointer = window.matchMedia('(max-width: 959px), (pointer: coarse)').matches;
+
+  /* Illustrator export rects — invisible boxes that can render as dark artifacts on mobile */
+  doc.querySelectorAll('rect.st110').forEach((rect) => {
+    rect.setAttribute('visibility', 'hidden');
+  });
 
   const style = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
   style.textContent = '.chrome-mesh { transform-box: fill-box; transform-origin: center; cursor: grab; }';
@@ -33,6 +40,9 @@ export function initHeroChromeAnim(object) {
   let dragOriginX = 0;
   let dragOriginY = 0;
   let hoverItem = null;
+  let activePointerId = null;
+
+  const eventTarget = chromeStage || hero;
 
   const getScale = () => {
     const rect = svg.getBoundingClientRect();
@@ -46,10 +56,10 @@ export function initHeroChromeAnim(object) {
   const pickItem = (clientX, clientY) => {
     let best = null;
     let bestDist = Infinity;
+    const pad = isCoarsePointer ? 28 : 14;
 
     items.forEach((item) => {
       const box = item.el.getBoundingClientRect();
-      const pad = 14;
       if (
         clientX < box.left - pad ||
         clientX > box.right + pad ||
@@ -76,12 +86,13 @@ export function initHeroChromeAnim(object) {
   };
 
   const onPointerDown = (event) => {
-    if (event.button !== 0) return;
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
 
     const item = pickItem(event.clientX, event.clientY);
     if (!item) return;
 
     activeItem = item;
+    activePointerId = event.pointerId;
     dragStartX = event.clientX;
     dragStartY = event.clientY;
     dragOriginX = item.dragPxX;
@@ -89,13 +100,16 @@ export function initHeroChromeAnim(object) {
 
     setHeroCursor('grabbing');
     hero.classList.add('hero--chrome-drag');
+    eventTarget.setPointerCapture?.(event.pointerId);
     event.preventDefault();
   };
 
   const onPointerMove = (event) => {
     if (activeItem) {
+      if (activePointerId !== null && event.pointerId !== activePointerId) return;
       activeItem.dragPxX = dragOriginX + (event.clientX - dragStartX);
       activeItem.dragPxY = dragOriginY + (event.clientY - dragStartY);
+      event.preventDefault();
       return;
     }
 
@@ -104,16 +118,22 @@ export function initHeroChromeAnim(object) {
     setHeroCursor(item ? 'grab' : 'default');
   };
 
-  const onPointerUp = () => {
+  const endDrag = (event) => {
+    if (activePointerId !== null && event?.pointerId !== undefined && event.pointerId !== activePointerId) {
+      return;
+    }
     activeItem = null;
+    activePointerId = null;
     hero.classList.remove('hero--chrome-drag');
     setHeroCursor(hoverItem ? 'grab' : 'default');
   };
 
-  hero.addEventListener('pointerdown', onPointerDown);
-  window.addEventListener('pointermove', onPointerMove);
-  window.addEventListener('pointerup', onPointerUp);
-  window.addEventListener('pointercancel', onPointerUp);
+  const pointerOptions = { passive: false };
+
+  eventTarget.addEventListener('pointerdown', onPointerDown, pointerOptions);
+  eventTarget.addEventListener('pointermove', onPointerMove, pointerOptions);
+  eventTarget.addEventListener('pointerup', endDrag);
+  eventTarget.addEventListener('pointercancel', endDrag);
 
   const tick = (time) => {
     const { sx, sy } = getScale();
@@ -138,10 +158,10 @@ export function initHeroChromeAnim(object) {
 
   return () => {
     cancelAnimationFrame(rafId);
-    hero.removeEventListener('pointerdown', onPointerDown);
-    window.removeEventListener('pointermove', onPointerMove);
-    window.removeEventListener('pointerup', onPointerUp);
-    window.removeEventListener('pointercancel', onPointerUp);
+    eventTarget.removeEventListener('pointerdown', onPointerDown, pointerOptions);
+    eventTarget.removeEventListener('pointermove', onPointerMove, pointerOptions);
+    eventTarget.removeEventListener('pointerup', endDrag);
+    eventTarget.removeEventListener('pointercancel', endDrag);
     hero.style.cursor = '';
     hero.classList.remove('hero--chrome-drag');
     items.forEach((item) => item.el.removeAttribute('transform'));

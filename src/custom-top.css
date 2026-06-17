@@ -388,20 +388,21 @@ body.t-body {
   .hero-viewport {
     min-height: 0;
     display: block;
+    margin-bottom: -28px;
   }
 
   .hero {
     width: 100%;
     max-width: 100vw;
     height: auto;
-    min-height: max(640px, 100svh);
+    min-height: 0;
     aspect-ratio: unset;
     container-type: normal;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
-    padding: 10px 12px 16px;
+    gap: 6px;
+    padding: 10px 12px 6px;
     box-sizing: border-box;
     overflow: visible;
   }
@@ -415,6 +416,11 @@ body.t-body {
     aspect-ratio: 488.04 / 288.69;
     overflow: visible;
     z-index: 1;
+    touch-action: pan-y;
+  }
+
+  .hero.hero--chrome-drag .hero-chrome-stage {
+    touch-action: none;
   }
 
   .hero-header {
@@ -487,6 +493,7 @@ body.t-body {
     inset: 0;
     overflow: visible;
     z-index: 1;
+    pointer-events: none;
   }
 
   .efet-web-elements-fragment {
@@ -495,27 +502,6 @@ body.t-body {
     width: 100%;
     height: 100%;
     aspect-ratio: unset;
-  }
-
-  .hero-chrome-stage .hero-metal-sphere,
-  .hero-chrome-stage .hero-metal-cone {
-    display: block;
-    z-index: 8;
-    height: auto;
-  }
-
-  .hero-chrome-stage .hero-metal-sphere {
-    left: 34.4%;
-    top: 32.6%;
-    width: 15.6%;
-    aspect-ratio: 76 / 74;
-  }
-
-  .hero-chrome-stage .hero-metal-cone {
-    left: 52.5%;
-    top: 10.4%;
-    width: 18.9%;
-    aspect-ratio: 92 / 98;
   }
 
   .hero-kicker {
@@ -564,7 +550,7 @@ body.t-body {
     width: min(100%, 340px);
     max-width: 92vw;
     height: auto;
-    margin: 4px auto 0;
+    margin: 2px auto 0;
     grid-template-columns: 1fr;
     gap: 6px;
     z-index: 5;
@@ -579,13 +565,21 @@ body.t-body {
     padding: 6px 12px;
     border-radius: 12px;
   }
+
+  /* First content block after hero (Tilda) */
+  #rec1921353381 {
+    margin-top: -24px;
+  }
 }
 
 @media (max-width: 639px) {
+  .hero-viewport {
+    margin-bottom: -36px;
+  }
+
   .hero {
-    min-height: max(680px, 100svh);
-    padding: 8px 8px 14px;
-    gap: 6px;
+    padding: 8px 8px 4px;
+    gap: 5px;
   }
 
   .hero-header {
@@ -629,11 +623,19 @@ body.t-body {
     padding: 5px 10px;
     border-radius: 12px;
   }
+
+  #rec1921353381 {
+    margin-top: -32px;
+  }
 }
 
 @media (max-width: 479px) {
+  .hero-viewport {
+    margin-bottom: -40px;
+  }
+
   .hero {
-    min-height: max(660px, 100svh);
+    padding-bottom: 2px;
   }
 
   .brand-mark {
