@@ -7,7 +7,7 @@
     "predev": "node scripts/copy-public-assets.mjs",
     "dev": "vite",
     "prebuild": "node scripts/copy-public-assets.mjs",
-    "build": "vite build",
+    "build": "vite build && node scripts/patch-github-pages-html.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
