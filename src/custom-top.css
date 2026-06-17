@@ -388,7 +388,7 @@ body.t-body {
   .hero-viewport {
     min-height: 0;
     display: block;
-    margin-bottom: -28px;
+    margin-bottom: 0;
   }
 
   .hero {
@@ -402,7 +402,7 @@ body.t-body {
     flex-direction: column;
     align-items: stretch;
     gap: 6px;
-    padding: 10px 12px 6px;
+    padding: 10px 12px 14px;
     box-sizing: border-box;
     overflow: visible;
   }
@@ -550,7 +550,7 @@ body.t-body {
     width: min(100%, 340px);
     max-width: 92vw;
     height: auto;
-    margin: 2px auto 0;
+    margin: 2px auto 14px;
     grid-template-columns: 1fr;
     gap: 6px;
     z-index: 5;
@@ -566,19 +566,11 @@ body.t-body {
     border-radius: 12px;
   }
 
-  /* First content block after hero (Tilda) */
-  #rec1921353381 {
-    margin-top: -24px;
-  }
 }
 
 @media (max-width: 639px) {
-  .hero-viewport {
-    margin-bottom: -36px;
-  }
-
   .hero {
-    padding: 8px 8px 4px;
+    padding: 8px 8px 12px;
     gap: 5px;
   }
 
@@ -615,6 +607,7 @@ body.t-body {
   .hero-info-panel {
     width: min(100%, 320px);
     gap: 5px;
+    margin-bottom: 12px;
   }
 
   .info-card {
@@ -623,19 +616,11 @@ body.t-body {
     padding: 5px 10px;
     border-radius: 12px;
   }
-
-  #rec1921353381 {
-    margin-top: -32px;
-  }
 }
 
 @media (max-width: 479px) {
-  .hero-viewport {
-    margin-bottom: -40px;
-  }
-
   .hero {
-    padding-bottom: 2px;
+    padding-bottom: 10px;
   }
 
   .brand-mark {
@@ -655,6 +640,7 @@ body.t-body {
 
   .hero-info-panel {
     width: min(100%, 300px);
+    margin-bottom: 10px;
   }
 
   .info-card {
