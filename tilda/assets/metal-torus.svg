@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140">
+  <defs>
+    <linearGradient id="chrome" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#d0d0d0"/>
+      <stop offset="55%" stop-color="#888"/>
+      <stop offset="100%" stop-color="#4a4a4a"/>
+    </linearGradient>
+  </defs>
+  <path fill-rule="evenodd" fill="url(#chrome)"
+    d="M70 12a58 58 0 1 1 0 116a58 58 0 1 1 0-116zm0 30a28 28 0 1 0 0 56a28 28 0 1 0 0-56z"/>
+  <ellipse cx="48" cy="42" rx="18" ry="10" fill="#fff" opacity="0.35"/>
+</svg>

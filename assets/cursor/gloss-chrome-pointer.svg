@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+  <defs>
+    <radialGradient id="body" cx="30%" cy="24%" r="74%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="20%" stop-color="#f4f4f2"/>
+      <stop offset="48%" stop-color="#b0b3b6"/>
+      <stop offset="100%" stop-color="#34373b"/>
+    </radialGradient>
+    <radialGradient id="shine" cx="32%" cy="26%" r="44%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="hole" cx="50%" cy="48%" r="58%">
+      <stop offset="0%" stop-color="#0a0b0c"/>
+      <stop offset="50%" stop-color="#424548"/>
+      <stop offset="100%" stop-color="#94979b"/>
+    </radialGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" transform="rotate(-12 16 16)">
+    <path fill-rule="evenodd" fill="url(#body)" d="M16 4.5a11.5 9 0 1 1 0 18a11.5 9 0 1 1 0-18zm0 4a4 3.1 0 1 0 0 8a4 3.1 0 1 0 0-8z"/>
+    <path fill-rule="evenodd" fill="url(#shine)" d="M16 4.5a11.5 9 0 1 1 0 18a11.5 9 0 1 1 0-18zm0 4a4 3.1 0 1 0 0 8a4 3.1 0 1 0 0-8z"/>
+    <ellipse cx="16.2" cy="12.6" rx="3.6" ry="2.3" fill="url(#hole)"/>
+    <ellipse cx="16.8" cy="11.4" rx="1.7" ry="0.75" fill="#e99abd" opacity="0.72"/>
+    <ellipse cx="11.2" cy="10.2" rx="2.4" ry="1" fill="#ffffff" opacity="0.55"/>
+  </g>
+</svg>

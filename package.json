@@ -4,9 +4,15 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/copy-public-assets.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/copy-public-assets.mjs",
     "build": "vite build",
     "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "vite": "^6.3.5"

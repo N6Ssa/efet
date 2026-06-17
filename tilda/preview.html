@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EFET CRÉA — главный экран (эталон)</title>
+  <link rel="stylesheet" href="hero.css">
+</head>
+<body style="margin:0;background:#fff;">
+
+<div class="hero-viewport">
+<section class="hero" id="hero" aria-label="Главный экран">
+
+  <div class="hero-pink-glow" aria-hidden="true"></div>
+
+  <div class="hero-bg-lines" aria-hidden="true">
+    <img src="assets/waves.svg" alt="">
+  </div>
+
+  <img class="hero-metal hero-metal-sphere" src="assets/sphere.png" alt="" aria-hidden="true">
+  <img class="hero-metal hero-metal-cone" src="assets/cone.png" alt="" aria-hidden="true">
+  <img class="hero-metal hero-metal-cube" src="assets/cube.png" alt="" aria-hidden="true">
+  <img class="hero-metal hero-metal-torus" src="assets/torus.png" alt="" aria-hidden="true">
+  <img class="hero-metal hero-metal-blob" src="assets/blob.png" alt="" aria-hidden="true">
+  <img class="hero-metal hero-metal-wave" src="assets/wave.png" alt="" aria-hidden="true">
+
+  <a class="brand-mark" href="#" aria-label="EFET Studio">
+    <img src="assets/brand-mark.png" alt="">
+  </a>
+
+  <div class="top-header-bar" aria-hidden="true"></div>
+
+  <a class="header-phone" href="tel:+79214076261">+7 (921) 407-62-61</a>
+  <a class="header-email" href="mailto:info@efet-studio.ru">info@efet-studio.ru</a>
+  <a class="header-cta" href="#popup:consultation">Записаться на консультацию</a>
+
+  <p class="hero-kicker">ФРАНЦУЗСКИЙ ИНСТИТУТ ДИЗАЙНА</p>
+
+  <h1 class="hero-logo-efet">
+    <img src="assets/wordmark.png" alt="efet CRĒA">
+  </h1>
+
+  <p class="hero-subtitle">МЕЖДУНАРОДНЫЙ ДИПЛОМ<br>В САНКТ-ПЕТЕРБУРГЕ</p>
+
+  <div class="hero-info-panel" aria-label="Преимущества программы">
+    <a href="#diploma" class="info-card">Международный<br>диплом в Санкт-<br>Петербурге</a>
+    <a href="#program" class="info-card">Французская<br>программа</a>
+    <a href="#education" class="info-card">Высшее<br>образование,<br>3 года очно</a>
+    <a href="#language" class="info-card">Преподавание<br>на русском</a>
+    <a href="#paris" class="info-card">Стажировка<br>в Париже</a>
+  </div>
+
+  <div class="reference-overlay" id="refOverlay" aria-hidden="true"></div>
+</section>
+</div>
+
+<p class="compare-hint">Нажмите <kbd>O</kbd> — наложить эталон</p>
+
+<script>
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'o' || e.key === 'O' || e.key === 'щ' || e.key === 'Щ') {
+    document.getElementById('refOverlay').classList.toggle('is-on');
+  }
+});
+</script>
+</body>
+</html>

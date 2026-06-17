@@ -1,0 +1,216 @@
+/* EFET CRÉA hero — эталон 1024×579, координаты с reference.png */
+
+.hero-viewport { display: block; margin: 0; padding: 0; background: #fff; }
+
+.hero {
+  --base-w: 1024;
+  --base-h: 579;
+  position: relative;
+  width: min(100vw, calc(100vh * var(--base-w) / var(--base-h)));
+  height: min(calc(100vw * var(--base-h) / var(--base-w)), 100vh);
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+  container-type: size;
+  container-name: hero;
+  font-family: 'Geometria', Arial, sans-serif;
+  color: #1f1f1f;
+}
+
+.hero-pink-glow {
+  position: absolute;
+  left: calc(10 / var(--base-w) * 100cqw);
+  top: calc(120 / var(--base-h) * 100cqh);
+  width: calc(450 / var(--base-w) * 100cqw);
+  height: calc(370 / var(--base-h) * 100cqh);
+  background: radial-gradient(ellipse 50% 50% at 48% 58%, rgba(233, 118, 188, 0.75) 0%, rgba(233, 118, 188, 0.4) 45%, rgba(233, 118, 188, 0) 74%);
+  filter: blur(12px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-bg-lines {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.hero-bg-lines img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  opacity: 0.45;
+}
+
+.hero-metal {
+  position: absolute;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+.hero-metal-sphere { left: calc(168 / var(--base-w) * 100cqw); top: calc(94 / var(--base-h) * 100cqh); width: calc(76 / var(--base-w) * 100cqw); height: calc(74 / var(--base-h) * 100cqh); z-index: 7; }
+.hero-metal-cone   { left: calc(256 / var(--base-w) * 100cqw); top: calc(30 / var(--base-h) * 100cqh); width: calc(92 / var(--base-w) * 100cqw); height: calc(98 / var(--base-h) * 100cqh); z-index: 21; }
+.hero-metal-cube   { left: calc(584 / var(--base-w) * 100cqw); top: calc(170 / var(--base-h) * 100cqh); width: calc(88 / var(--base-w) * 100cqw); height: calc(78 / var(--base-h) * 100cqh); z-index: 12; }
+.hero-metal-torus  { left: calc(262 / var(--base-w) * 100cqw); top: calc(332 / var(--base-h) * 100cqh); width: calc(130 / var(--base-w) * 100cqw); height: calc(106 / var(--base-h) * 100cqh); z-index: 12; }
+.hero-metal-blob   { left: calc(586 / var(--base-w) * 100cqw); top: calc(392 / var(--base-h) * 100cqh); width: calc(122 / var(--base-w) * 100cqw); height: calc(90 / var(--base-h) * 100cqh); z-index: 9; }
+.hero-metal-wave   { left: calc(38 / var(--base-w) * 100cqw); top: calc(313 / var(--base-h) * 100cqh); width: calc(204 / var(--base-w) * 100cqw); height: calc(60 / var(--base-h) * 100cqh); z-index: 7; }
+
+.brand-mark {
+  position: absolute;
+  left: calc(20 / var(--base-w) * 100cqw);
+  top: calc(20 / var(--base-h) * 100cqh);
+  width: calc(216 / var(--base-w) * 100cqw);
+  height: calc(62 / var(--base-h) * 100cqh);
+  z-index: 30;
+  line-height: 0;
+}
+.brand-mark img { display: block; width: 100%; height: 100%; object-fit: fill; }
+
+.top-header-bar {
+  position: absolute;
+  left: calc(258 / var(--base-w) * 100cqw);
+  top: calc(21 / var(--base-h) * 100cqh);
+  width: calc(441 / var(--base-w) * 100cqw);
+  height: calc(39 / var(--base-h) * 100cqh);
+  background: #1f1f1f;
+  border-radius: calc(10 / var(--base-h) * 100cqh);
+  z-index: 20;
+}
+
+.header-phone, .header-email, .header-cta {
+  position: absolute;
+  z-index: 25;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.header-phone, .header-email {
+  color: #e8e8e8 !important;
+  font-size: calc(11 / var(--base-w) * 100cqw);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+.header-phone { left: calc(390 / var(--base-w) * 100cqw); top: calc(40 / var(--base-h) * 100cqh); transform: translateY(-50%); }
+.header-email { left: calc(528 / var(--base-w) * 100cqw); top: calc(40 / var(--base-h) * 100cqh); transform: translateY(-50%); }
+
+.header-cta {
+  left: calc(699 / var(--base-w) * 100cqw);
+  top: calc(26 / var(--base-h) * 100cqh);
+  width: calc(207 / var(--base-w) * 100cqw);
+  height: calc(32 / var(--base-h) * 100cqh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d86928;
+  border-radius: calc(8 / var(--base-h) * 100cqh);
+  color: #fff !important;
+  font-size: calc(10 / var(--base-w) * 100cqw);
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  padding: 0 calc(8 / var(--base-w) * 100cqw);
+}
+
+.hero-kicker {
+  position: absolute;
+  left: 50%;
+  top: calc(157 / var(--base-h) * 100cqh);
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: calc(12 / var(--base-w) * 100cqw);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 12;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.hero-logo-efet {
+  position: absolute;
+  left: 50%;
+  top: calc(170 / var(--base-h) * 100cqh);
+  transform: translateX(-50%);
+  width: calc(546 / var(--base-w) * 100cqw);
+  height: calc(180 / var(--base-h) * 100cqh);
+  margin: 0;
+  z-index: 11;
+}
+.hero-logo-efet img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+.hero-subtitle {
+  position: absolute;
+  left: 50%;
+  top: calc(357 / var(--base-h) * 100cqh);
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: calc(11 / var(--base-w) * 100cqw);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  z-index: 12;
+  white-space: nowrap;
+}
+
+.hero-info-panel {
+  position: absolute;
+  left: calc(36 / var(--base-w) * 100cqw);
+  bottom: calc(17 / var(--base-h) * 100cqh);
+  width: calc(892 / var(--base-w) * 100cqw);
+  height: calc(100 / var(--base-h) * 100cqh);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: #1f1f1f;
+  border-radius: calc(10 / var(--base-w) * 100cqw);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(8 / var(--base-h) * 100cqh) calc(10 / var(--base-w) * 100cqw);
+  border-right: 1px solid rgba(255, 255, 255, 0.75);
+  color: #fff !important;
+  font-size: calc(10 / var(--base-w) * 100cqw);
+  font-weight: 400;
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+.info-card:last-child { border-right: none; }
+
+.header-phone:hover, .header-email:hover, .header-cta:hover { filter: brightness(1.08); }
+
+/* Сравнение с эталоном — нажмите O */
+.reference-overlay {
+  position: absolute;
+  inset: 0;
+  background: url('assets/reference.png') center / 100% 100% no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 0.2s;
+}
+.reference-overlay.is-on { opacity: 0.45; }
+
+.compare-hint {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 10000;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font: 12px/1.4 Arial, sans-serif;
+  border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .hero-kicker, .hero-subtitle { white-space: normal; width: 90%; }
+}

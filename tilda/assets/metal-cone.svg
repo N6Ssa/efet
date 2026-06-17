@@ -1,0 +1,17 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 130">
+  <defs>
+    <linearGradient id="chrome" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop offset="0%" stop-color="#f8f8f8"/>
+      <stop offset="35%" stop-color="#c8c8c8"/>
+      <stop offset="65%" stop-color="#8a8a8a"/>
+      <stop offset="100%" stop-color="#5a5a5a"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <path d="M55 6 L98 118 L12 118 Z" fill="url(#chrome)"/>
+  <path d="M55 14 L86 108 L24 108 Z" fill="url(#edge)" opacity="0.6"/>
+</svg>
