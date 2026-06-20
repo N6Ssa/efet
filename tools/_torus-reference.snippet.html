@@ -1,0 +1,250 @@
+  <div class="chrome-torus hero-metal hero-metal-torus" aria-hidden="true">
+  <svg viewBox="0 0 620 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="bodyChrome" cx="46%" cy="35%" r="68%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="13%" stop-color="#f8f8f5"/>
+        <stop offset="25%" stop-color="#cfd1d2"/>
+        <stop offset="38%" stop-color="#4d5154"/>
+        <stop offset="50%" stop-color="#1f2225"/>
+        <stop offset="62%" stop-color="#a5a8aa"/>
+        <stop offset="74%" stop-color="#eeeeec"/>
+        <stop offset="86%" stop-color="#6b6e72"/>
+        <stop offset="100%" stop-color="#202326"/>
+      </radialGradient>
+
+      <linearGradient id="whiteCrown" x1="12%" y1="4%" x2="86%" y2="72%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+        <stop offset="36%" stop-color="#ffffff" stop-opacity="0.96"/>
+        <stop offset="63%" stop-color="#f0f0ec" stop-opacity="0.72"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+
+      <radialGradient id="innerChrome" cx="48%" cy="48%" r="65%">
+        <stop offset="0%" stop-color="#08090a"/>
+        <stop offset="28%" stop-color="#181a1d"/>
+        <stop offset="44%" stop-color="#5c6064"/>
+        <stop offset="58%" stop-color="#e9e9e6"/>
+        <stop offset="74%" stop-color="#7d8084"/>
+        <stop offset="100%" stop-color="#101214"/>
+      </radialGradient>
+
+      <linearGradient id="bottomDark" x1="10%" y1="20%" x2="88%" y2="82%">
+        <stop offset="0%" stop-color="#101214" stop-opacity="0.75"/>
+        <stop offset="42%" stop-color="#2d3033" stop-opacity="0.72"/>
+        <stop offset="70%" stop-color="#0b0c0d" stop-opacity="0.85"/>
+        <stop offset="100%" stop-color="#56595c" stop-opacity="0.25"/>
+      </linearGradient>
+
+      <filter id="softEdge" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="1.4"/>
+      </filter>
+
+      <filter id="paintBlur" x="-30%" y="-30%" width="160%" height="160%">
+        <feGaussianBlur stdDeviation="5"/>
+      </filter>
+
+      <filter id="heavyBlur" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="10"/>
+      </filter>
+
+      <mask id="torusMask">
+        <rect width="620" height="430" fill="black"/>
+        <ellipse cx="312" cy="214" rx="226" ry="126" transform="rotate(-9 312 214)" fill="white"/>
+        <ellipse cx="312" cy="210" rx="98" ry="47" transform="rotate(-9 312 210)" fill="black"/>
+      </mask>
+
+      <clipPath id="torusClip">
+        <path d="
+          M 92 225
+          C 89 145, 175 84, 300 72
+          C 431 60, 529 104, 545 181
+          C 562 261, 474 333, 337 352
+          C 200 371, 94 306, 92 225 Z
+          M 219 220
+          C 220 247, 263 263, 320 257
+          C 378 251, 418 224, 412 197
+          C 406 171, 360 158, 303 164
+          C 247 171, 217 193, 219 220 Z
+        "/>
+      </clipPath>
+    </defs>
+
+    <!-- мягкая падающая тень -->
+    <ellipse
+      cx="330"
+      cy="296"
+      rx="212"
+      ry="58"
+      transform="rotate(-9 330 296)"
+      fill="#3c3438"
+      opacity="0.27"
+      filter="url(#heavyBlur)"
+    />
+
+    <!-- основное тело -->
+    <ellipse
+      cx="312"
+      cy="214"
+      rx="226"
+      ry="126"
+      transform="rotate(-9 312 214)"
+      fill="url(#bodyChrome)"
+      mask="url(#torusMask)"
+      filter="url(#softEdge)"
+    />
+
+    <!-- нижняя тёмная масса -->
+    <ellipse
+      cx="306"
+      cy="272"
+      rx="190"
+      ry="54"
+      transform="rotate(-9 306 272)"
+      fill="url(#bottomDark)"
+      clip-path="url(#torusClip)"
+      opacity="0.78"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- большой белый верхний валик -->
+    <ellipse
+      cx="270"
+      cy="142"
+      rx="172"
+      ry="58"
+      transform="rotate(-9 270 142)"
+      fill="url(#whiteCrown)"
+      clip-path="url(#torusClip)"
+      opacity="0.96"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- правая светлая металлическая часть -->
+    <ellipse
+      cx="432"
+      cy="186"
+      rx="72"
+      ry="112"
+      transform="rotate(-15 432 186)"
+      fill="#dadcdd"
+      opacity="0.58"
+      clip-path="url(#torusClip)"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- правая тёмная глубина -->
+    <ellipse
+      cx="455"
+      cy="225"
+      rx="46"
+      ry="94"
+      transform="rotate(-14 455 225)"
+      fill="#1f2225"
+      opacity="0.36"
+      clip-path="url(#torusClip)"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- внутреннее отверстие: тёмный металл -->
+    <ellipse
+      cx="312"
+      cy="210"
+      rx="105"
+      ry="54"
+      transform="rotate(-9 312 210)"
+      fill="url(#innerChrome)"
+      opacity="0.98"
+      filter="url(#softEdge)"
+    />
+
+    <!-- розовый просвет внутри -->
+    <ellipse
+      cx="314"
+      cy="225"
+      rx="77"
+      ry="31"
+      transform="rotate(-9 314 225)"
+      fill="#e99abd"
+      opacity="0.98"
+      filter="url(#softEdge)"
+    />
+
+    <!-- затемнение верхней внутренней кромки -->
+    <ellipse
+      cx="303"
+      cy="197"
+      rx="87"
+      ry="33"
+      transform="rotate(-9 303 197)"
+      fill="#08090b"
+      opacity="0.62"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- левое тёмное отражение -->
+    <ellipse
+      cx="214"
+      cy="206"
+      rx="58"
+      ry="35"
+      transform="rotate(-18 214 206)"
+      fill="#111316"
+      opacity="0.46"
+      clip-path="url(#torusClip)"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- центральное грязное отражение -->
+    <ellipse
+      cx="343"
+      cy="172"
+      rx="62"
+      ry="42"
+      transform="rotate(-8 343 172)"
+      fill="#26292d"
+      opacity="0.34"
+      clip-path="url(#torusClip)"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- маленький чёрный штрих справа снизу -->
+    <ellipse
+      cx="457"
+      cy="260"
+      rx="36"
+      ry="18"
+      transform="rotate(-10 457 260)"
+      fill="#070809"
+      opacity="0.55"
+      clip-path="url(#torusClip)"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- нижний левый холодный блик -->
+    <ellipse
+      cx="188"
+      cy="292"
+      rx="94"
+      ry="23"
+      transform="rotate(-9 188 292)"
+      fill="#c9cbcc"
+      opacity="0.38"
+      clip-path="url(#torusClip)"
+      filter="url(#paintBlur)"
+    />
+
+    <!-- общая молочная дымка как в референсе, но не убивает форму -->
+    <ellipse
+      cx="307"
+      cy="192"
+      rx="218"
+      ry="118"
+      transform="rotate(-9 307 192)"
+      fill="#ffffff"
+      opacity="0.08"
+      clip-path="url(#torusClip)"
+      filter="url(#heavyBlur)"
+    />
+  </svg>
+  </div>

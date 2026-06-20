@@ -405,13 +405,19 @@ body.t-body {
     display: block;
     position: relative;
     order: 4;
-    width: 152%;
-    margin-left: -26%;
+    width: 100%;
+    margin-left: 0;
+    align-self: stretch;
     flex: 0 0 auto;
     aspect-ratio: 488.04 / 288.69;
     overflow: visible;
     z-index: 1;
     touch-action: pan-y;
+  }
+
+  .hero-chrome-stage .efet-web-elements-fragment {
+    transform: scale(1.6);
+    transform-origin: 50% 50%;
   }
 
   .hero.hero--chrome-drag .hero-chrome-stage {
@@ -505,18 +511,19 @@ body.t-body {
     left: auto;
     top: auto;
     transform: none;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 6px;
+    width: auto;
+    max-width: 72%;
+    margin: 14px 2px 8px;
     padding: 0 4px;
-    align-self: center;
+    align-self: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     white-space: normal;
-    font-size: clamp(10px, 2.8vw, 12px);
-    letter-spacing: 0.05em;
+    font-size: clamp(14px, 4.4vw, 19px);
+    letter-spacing: 0.04em;
+    line-height: 1.15;
     z-index: 5;
   }
 
@@ -552,9 +559,9 @@ body.t-body {
     min-height: 36px;
     font-size: clamp(11px, 3.2vw, 14px);
     line-height: 1.2;
-    justify-content: center;
-    text-align: center;
-    padding: 6px 12px;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 6px 14px;
     border-radius: 12px;
   }
 
