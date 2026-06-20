@@ -65,6 +65,16 @@ function Resolve-RequestPath([string]$UrlPath) {
         return $fullCandidate
     }
 
+    # Match Vite: files from public/ are served at the site root (/graphics/…, etc.)
+    $publicRelative = $decoded.TrimStart('/').Replace('/', [IO.Path]::DirectorySeparatorChar)
+    if ($publicRelative) {
+        $publicCandidate = Join-Path (Join-Path $Root 'public') $publicRelative
+        $fullPublic = [IO.Path]::GetFullPath($publicCandidate)
+        if ($fullPublic.StartsWith($fullRoot, [StringComparison]::OrdinalIgnoreCase) -and (Test-Path $fullPublic -PathType Leaf)) {
+            return $fullPublic
+        }
+    }
+
     return $null
 }
 

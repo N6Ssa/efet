@@ -54,6 +54,7 @@ body.t-body {
   top: 0;
   width: 100%;
   aspect-ratio: 488.04 / 288.69;
+  z-index: 1;
 }
 
 .efet-web-elements-fragment__object {
@@ -76,18 +77,6 @@ body.t-body {
 }
 
 /* ── Background ── */
-.hero-pink-glow {
-  position: absolute;
-  left: calc(30 / var(--base-w) * 100cqw);
-  top: calc(140 / var(--base-h) * 100cqh);
-  width: calc(410 / var(--base-w) * 100cqw);
-  height: calc(340 / var(--base-h) * 100cqh);
-  background: radial-gradient(ellipse 50% 50% at 48% 55%, rgba(236, 130, 190, 0.55) 0%, rgba(236, 130, 190, 0.25) 45%, rgba(236, 130, 190, 0) 75%);
-  filter: blur(14px);
-  z-index: 2;
-  pointer-events: none;
-}
-
 .hero-bg-lines {
   position: absolute;
   inset: 0;
