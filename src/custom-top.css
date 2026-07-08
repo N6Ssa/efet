@@ -559,10 +559,10 @@ body.t-body {
     height: 64px;
     min-height: 64px;
     font-size: clamp(12px, 3.4vw, 14px);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.25;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
     padding: 8px 16px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -612,6 +612,9 @@ body.t-body {
     height: 64px;
     min-height: 64px;
     font-size: clamp(12px, 3.5vw, 14px);
+    font-weight: 400;
+    justify-content: flex-start;
+    text-align: left;
     padding: 8px 18px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -648,6 +651,9 @@ body.t-body {
     height: 60px;
     min-height: 60px;
     font-size: clamp(11px, 3.3vw, 13px);
+    font-weight: 400;
+    justify-content: flex-start;
+    text-align: left;
     padding: 8px 16px;
     border-radius: 10px;
     box-sizing: border-box;
