@@ -556,14 +556,16 @@ body.t-body {
   }
 
   .info-card {
-    min-height: 52px;
+    height: 64px;
+    min-height: 64px;
     font-size: clamp(12px, 3.4vw, 14px);
     font-weight: 500;
     line-height: 1.25;
     justify-content: center;
     text-align: center;
-    padding: 12px 16px;
+    padding: 8px 16px;
     border-radius: 10px;
+    box-sizing: border-box;
   }
 
 }
@@ -607,10 +609,12 @@ body.t-body {
   }
 
   .info-card {
-    min-height: 50px;
+    height: 64px;
+    min-height: 64px;
     font-size: clamp(12px, 3.5vw, 14px);
-    padding: 11px 18px;
+    padding: 8px 18px;
     border-radius: 10px;
+    box-sizing: border-box;
   }
 }
 
@@ -641,9 +645,11 @@ body.t-body {
   }
 
   .info-card {
-    min-height: 46px;
+    height: 60px;
+    min-height: 60px;
     font-size: clamp(11px, 3.3vw, 13px);
-    padding: 10px 16px;
+    padding: 8px 16px;
     border-radius: 10px;
+    box-sizing: border-box;
   }
 }
