@@ -15,12 +15,12 @@
 | `logo.gif` | Логотип **efet CRĒA** по центру |
 | `brand-mark.png` | Мини-логотип слева в шапке |
 | `waves.svg` | Серые линии на фоне |
-| `metal-sphere.svg` | Сфера |
-| `metal-cone.svg` | Конус |
-| `metal-cube.svg` | Куб |
-| `metal-torus.svg` | Бублик |
-| `metal-blob.svg` | Капля |
-| `metal-wave.svg` | Волнистая труба |
+| `sphere.png` | Сфера |
+| `cone.png` | Конус |
+| `cube.png` | Куб |
+| `torus.png` | Бублик |
+| `blob.png` | Капля |
+| `wave.png` | Волнистая труба |
 
 ---
 
