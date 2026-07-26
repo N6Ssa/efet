@@ -1,5 +1,5 @@
 /**
- * Wave float + pointer drag for chrome SVG mesh groups (inside <object>).
+ * Wave float + pointer drag for hero metal PNGs.
  */
 
 const HERO_GLOW_COLOR = '#ec6ea3';
@@ -100,18 +100,13 @@ export function initHeroChromeAnim(object) {
 
   prepareHeroSvgLayer(object);
 
-  const svg = doc.documentElement;
-  const groups = [...doc.querySelectorAll('.chrome-mesh:not([data-hero-hidden])')];
-  if (!groups.length) return undefined;
+  const metalAssets = [...hero.querySelectorAll('.hero-metal')];
+  if (!metalAssets.length) return undefined;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarsePointer = window.matchMedia('(max-width: 959px), (pointer: coarse)').matches;
 
-  const style = doc.createElementNS('http://www.w3.org/2000/svg', 'style');
-  style.textContent = '.chrome-mesh { transform-box: fill-box; transform-origin: center; cursor: grab; }';
-  svg.insertBefore(style, svg.firstChild);
-
-  const items = groups.map((el, index) => ({
+  const items = metalAssets.map((el, index) => ({
     el,
     phase: index * 1.35,
     freq: 0.62 + index * 0.07,
@@ -143,14 +138,9 @@ export function initHeroChromeAnim(object) {
 
   const eventTarget = hero;
 
-  const getScale = () => {
-    const rect = svg.getBoundingClientRect();
-    const viewBox = svg.viewBox.baseVal;
-    return {
-      sx: viewBox.width / (rect.width || 1),
-      sy: viewBox.height / (rect.height || 1),
-    };
-  };
+  items.forEach((item) => {
+    item.el.style.willChange = 'transform';
+  });
 
   const pickItem = (clientX, clientY) => {
     let best = null;
@@ -290,7 +280,6 @@ export function initHeroChromeAnim(object) {
   };
 
   const tick = (time) => {
-    const { sx, sy } = getScale();
     updateFlee();
 
     items.forEach((item) => {
@@ -301,9 +290,9 @@ export function initHeroChromeAnim(object) {
         ? 0
         : Math.cos(time * 0.001 * item.freq * 0.88 + item.phase * 1.05) * item.ampY;
 
-      const tx = waveX + (item.dragPxX + item.fleePxX) * sx;
-      const ty = waveY + (item.dragPxY + item.fleePxY) * sy;
-      item.el.setAttribute('transform', `translate(${tx.toFixed(3)} ${ty.toFixed(3)})`);
+      const tx = waveX + item.dragPxX + item.fleePxX;
+      const ty = waveY + item.dragPxY + item.fleePxY;
+      item.el.style.transform = `translate3d(${tx.toFixed(3)}px, ${ty.toFixed(3)}px, 0)`;
     });
 
     rafId = requestAnimationFrame(tick);
@@ -320,6 +309,9 @@ export function initHeroChromeAnim(object) {
     eventTarget.removeEventListener('pointerleave', onPointerLeave);
     hero.style.cursor = '';
     hero.classList.remove('hero--chrome-drag');
-    items.forEach((item) => item.el.removeAttribute('transform'));
+    items.forEach((item) => {
+      item.el.style.transform = '';
+      item.el.style.willChange = '';
+    });
   };
 }
