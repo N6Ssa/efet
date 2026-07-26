@@ -23,6 +23,11 @@ export function prepareHeroSvgLayer(object) {
     rect.setAttribute('visibility', 'hidden');
   });
 
+  doc.querySelectorAll('.chrome-mesh').forEach((group) => {
+    group.setAttribute('visibility', 'hidden');
+    group.setAttribute('data-hero-hidden', 'true');
+  });
+
   doc.querySelector('rect.st304')?.setAttribute('fill', 'none');
 
   const existingCircle = svg.querySelector('#hero-pink-glow-circle');
@@ -96,7 +101,7 @@ export function initHeroChromeAnim(object) {
   prepareHeroSvgLayer(object);
 
   const svg = doc.documentElement;
-  const groups = [...doc.querySelectorAll('.chrome-mesh')];
+  const groups = [...doc.querySelectorAll('.chrome-mesh:not([data-hero-hidden])')];
   if (!groups.length) return undefined;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

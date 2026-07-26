@@ -71,6 +71,16 @@ body.t-body {
   backface-visibility: hidden;
 }
 
+.hero-metal-layer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 488.04 / 288.69;
+  z-index: 2;
+  pointer-events: none;
+}
+
 /* Logo is drawn in the SVG chrome layer — HTML wordmark kept for SEO only */
 .hero-logo-efet {
   display: none;
@@ -93,7 +103,9 @@ body.t-body {
 /* ── Metallic decor (PNG crops from reference) ── */
 .hero-metal {
   position: absolute;
-  display: none;
+  display: block;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
   pointer-events: none;
   user-select: none;
@@ -104,51 +116,45 @@ body.t-body {
 }
 
 .hero-metal-sphere {
-  left: calc(168 / var(--base-w) * 100cqw);
-  top: calc(94 / var(--base-h) * 100cqh);
-  width: calc(76 / var(--base-w) * 100cqw);
-  height: calc(74 / var(--base-h) * 100cqh);
-  z-index: 7;
+  left: 20.34%;
+  top: 17.97%;
+  width: 5.43%;
+  height: 9.38%;
 }
 
 .hero-metal-cone {
-  left: calc(256 / var(--base-w) * 100cqw);
-  top: calc(30 / var(--base-h) * 100cqh);
-  width: calc(92 / var(--base-w) * 100cqw);
-  height: calc(98 / var(--base-h) * 100cqh);
-  z-index: 21;
+  left: 26.44%;
+  top: 10.6%;
+  width: 7.75%;
+  height: 14.73%;
 }
 
 .hero-metal-cube {
-  left: calc(584 / var(--base-w) * 100cqw);
-  top: calc(170 / var(--base-h) * 100cqh);
-  width: calc(88 / var(--base-w) * 100cqw);
-  height: calc(78 / var(--base-h) * 100cqh);
-  z-index: 12;
+  left: 58.21%;
+  top: 32.95%;
+  width: 8.89%;
+  height: 14.93%;
 }
 
 .hero-metal-torus {
-  left: calc(262 / var(--base-w) * 100cqw);
-  top: calc(337 / var(--base-h) * 100cqh);
-  width: calc(130 / var(--base-w) * 100cqw);
-  height: calc(106 / var(--base-h) * 100cqh);
-  z-index: 12;
+  left: 27.28%;
+  top: 61.1%;
+  width: 8.8%;
+  height: 12.08%;
 }
 
 .hero-metal-blob {
-  left: calc(586 / var(--base-w) * 100cqw);
-  top: calc(392 / var(--base-h) * 100cqh);
-  width: calc(122 / var(--base-w) * 100cqw);
-  height: calc(90 / var(--base-h) * 100cqh);
-  z-index: 9;
+  left: 67.1%;
+  top: 75.08%;
+  width: 6.04%;
+  height: 9.84%;
 }
 
 .hero-metal-wave {
-  left: calc(38 / var(--base-w) * 100cqw);
-  top: calc(313 / var(--base-h) * 100cqh);
-  width: calc(204 / var(--base-w) * 100cqw);
-  height: calc(60 / var(--base-h) * 100cqh);
-  z-index: 7;
+  left: 4.74%;
+  top: 53.28%;
+  width: 13.87%;
+  height: 6.02%;
 }
 
 /* ── Header (centered): unified bar + logo + contacts ── */

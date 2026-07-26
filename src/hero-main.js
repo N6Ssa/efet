@@ -8,8 +8,41 @@ function resolveSvgUrl() {
 }
 
 const SVG_URL = resolveSvgUrl();
+const METAL_ASSETS = [
+  ['cone', 'cone'],
+  ['sphere', 'sphere'],
+  ['cube', 'cube'],
+  ['blob', 'blob'],
+  ['torus', 'torus'],
+  ['wave', 'wave'],
+];
 
 let cleanup;
+
+function resolveMetalAssetUrl(name) {
+  if (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL !== undefined) {
+    return `${import.meta.env.BASE_URL}assets/metal-${name}.png`;
+  }
+  return `/assets/metal-${name}.png`;
+}
+
+function mountMetalAssets(mountNode) {
+  if (mountNode.querySelector('.hero-metal-layer')) return;
+
+  const layer = document.createElement('div');
+  layer.className = 'hero-metal-layer';
+  layer.setAttribute('aria-hidden', 'true');
+
+  METAL_ASSETS.forEach(([name, className]) => {
+    const image = document.createElement('img');
+    image.className = `hero-metal hero-metal-${className}`;
+    image.src = resolveMetalAssetUrl(name);
+    image.alt = '';
+    layer.appendChild(image);
+  });
+
+  mountNode.appendChild(layer);
+}
 
 function bootChromeAnim(objectEl) {
   prepareHeroSvgLayer(objectEl);
@@ -37,6 +70,8 @@ function mountHeroWebElements(mountNode) {
     fragment.appendChild(objectEl);
     mountNode.appendChild(fragment);
   }
+
+  mountMetalAssets(mountNode);
 
   const onLoad = () => bootChromeAnim(objectEl);
   objectEl.addEventListener('load', onLoad);
