@@ -1,5 +1,5 @@
 /**
- * Wave float + pointer drag for hero metal PNGs.
+ * Wave float, pointer flee, and drag for hero metal PNGs.
  */
 
 const HERO_GLOW_COLOR = '#ec6ea3';
@@ -116,13 +116,15 @@ export function initHeroChromeAnim(object) {
     dragPxY: 0,
     fleePxX: 0,
     fleePxY: 0,
+    fleeVelX: 0,
+    fleeVelY: 0,
   }));
 
   const fleeEnabled = !isCoarsePointer && !reducedMotion;
-  const FLEE_RADIUS = 112;
-  const MAX_FLEE = 34;
-  const FLEE_LERP = 0.072;
-  const FLEE_RETURN = 0.048;
+  const FLEE_RADIUS = 190;
+  const MAX_FLEE = 62;
+  const FLEE_SPRING = 0.055;
+  const FLEE_DAMPING = 0.82;
 
   let rafId = 0;
   let activeItem = null;
@@ -135,6 +137,7 @@ export function initHeroChromeAnim(object) {
   let pointerX = null;
   let pointerY = null;
   let pointerInside = false;
+  let previousFrameTime = 0;
 
   const eventTarget = hero;
 
@@ -241,16 +244,15 @@ export function initHeroChromeAnim(object) {
   eventTarget.addEventListener('pointercancel', endDrag);
   eventTarget.addEventListener('pointerleave', onPointerLeave);
 
-  const updateFlee = () => {
-    if (!fleeEnabled || activeItem) {
-      items.forEach((item) => {
-        item.fleePxX += (0 - item.fleePxX) * FLEE_RETURN;
-        item.fleePxY += (0 - item.fleePxY) * FLEE_RETURN;
-      });
-      return;
-    }
-
-    const canFlee = pointerInside && pointerX !== null && pointerY !== null;
+  const updateFlee = (time) => {
+    const elapsed = previousFrameTime ? Math.min(time - previousFrameTime, 32) : 16.67;
+    const frameScale = elapsed / 16.67;
+    previousFrameTime = time;
+    const canFlee = fleeEnabled
+      && !activeItem
+      && pointerInside
+      && pointerX !== null
+      && pointerY !== null;
 
     items.forEach((item) => {
       let targetX = 0;
@@ -258,29 +260,43 @@ export function initHeroChromeAnim(object) {
 
       if (canFlee) {
         const box = item.el.getBoundingClientRect();
-        const cx = box.left + box.width / 2;
-        const cy = box.top + box.height / 2;
+        const cx = box.left + box.width / 2 - item.fleePxX;
+        const cy = box.top + box.height / 2 - item.fleePxY;
         const dx = cx - pointerX;
         const dy = cy - pointerY;
         const dist = Math.hypot(dx, dy);
 
         if (dist > 0 && dist < FLEE_RADIUS) {
           const t = 1 - dist / FLEE_RADIUS;
-          const ease = t * t * (3 - 2 * t);
+          const ease = t * t;
           const mag = MAX_FLEE * ease;
           targetX = (dx / dist) * mag;
           targetY = (dy / dist) * mag;
         }
       }
 
-      const lerp = canFlee ? FLEE_LERP : FLEE_RETURN;
-      item.fleePxX += (targetX - item.fleePxX) * lerp;
-      item.fleePxY += (targetY - item.fleePxY) * lerp;
+      item.fleeVelX += (targetX - item.fleePxX) * FLEE_SPRING * frameScale;
+      item.fleeVelY += (targetY - item.fleePxY) * FLEE_SPRING * frameScale;
+
+      const damping = Math.pow(FLEE_DAMPING, frameScale);
+      item.fleeVelX *= damping;
+      item.fleeVelY *= damping;
+      item.fleePxX += item.fleeVelX * frameScale;
+      item.fleePxY += item.fleeVelY * frameScale;
+
+      if (!canFlee && Math.abs(item.fleePxX) < 0.01 && Math.abs(item.fleeVelX) < 0.01) {
+        item.fleePxX = 0;
+        item.fleeVelX = 0;
+      }
+      if (!canFlee && Math.abs(item.fleePxY) < 0.01 && Math.abs(item.fleeVelY) < 0.01) {
+        item.fleePxY = 0;
+        item.fleeVelY = 0;
+      }
     });
   };
 
   const tick = (time) => {
-    updateFlee();
+    updateFlee(time);
 
     items.forEach((item) => {
       const waveX = reducedMotion
