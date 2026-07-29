@@ -116,16 +116,14 @@ export function initHeroChromeAnim(object) {
     dragPxY: 0,
     fleePxX: 0,
     fleePxY: 0,
-    fleeVelX: 0,
-    fleeVelY: 0,
   }));
 
   const fleeEnabled = !isCoarsePointer && !reducedMotion;
   const FLEE_RADIUS = 260;
   const MAX_FLEE = 110;
-  const FLEE_SPRING = 0.032;
-  const FLEE_DAMPING = 0.8;
-  const POINTER_FOLLOW = 0.13;
+  const FLEE_FOLLOW = 0.065;
+  const FLEE_RETURN = 0.035;
+  const POINTER_FOLLOW = 0.085;
 
   let rafId = 0;
   let activeItem = null;
@@ -291,22 +289,16 @@ export function initHeroChromeAnim(object) {
         }
       }
 
-      item.fleeVelX += (targetX - item.fleePxX) * FLEE_SPRING * frameScale;
-      item.fleeVelY += (targetY - item.fleePxY) * FLEE_SPRING * frameScale;
+      const follow = canFlee ? FLEE_FOLLOW : FLEE_RETURN;
+      const positionLerp = 1 - Math.pow(1 - follow, frameScale);
+      item.fleePxX += (targetX - item.fleePxX) * positionLerp;
+      item.fleePxY += (targetY - item.fleePxY) * positionLerp;
 
-      const damping = Math.pow(FLEE_DAMPING, frameScale);
-      item.fleeVelX *= damping;
-      item.fleeVelY *= damping;
-      item.fleePxX += item.fleeVelX * frameScale;
-      item.fleePxY += item.fleeVelY * frameScale;
-
-      if (!canFlee && Math.abs(item.fleePxX) < 0.01 && Math.abs(item.fleeVelX) < 0.01) {
+      if (!canFlee && Math.abs(item.fleePxX) < 0.01) {
         item.fleePxX = 0;
-        item.fleeVelX = 0;
       }
-      if (!canFlee && Math.abs(item.fleePxY) < 0.01 && Math.abs(item.fleeVelY) < 0.01) {
+      if (!canFlee && Math.abs(item.fleePxY) < 0.01) {
         item.fleePxY = 0;
-        item.fleeVelY = 0;
       }
     });
   };
