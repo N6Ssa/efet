@@ -123,8 +123,9 @@ export function initHeroChromeAnim(object) {
   const fleeEnabled = !isCoarsePointer && !reducedMotion;
   const FLEE_RADIUS = 260;
   const MAX_FLEE = 110;
-  const FLEE_SPRING = 0.045;
-  const FLEE_DAMPING = 0.84;
+  const FLEE_SPRING = 0.032;
+  const FLEE_DAMPING = 0.8;
+  const POINTER_FOLLOW = 0.13;
 
   let rafId = 0;
   let activeItem = null;
@@ -136,6 +137,8 @@ export function initHeroChromeAnim(object) {
   let activePointerId = null;
   let pointerX = null;
   let pointerY = null;
+  let smoothPointerX = null;
+  let smoothPointerY = null;
   let pointerInside = false;
   let previousFrameTime = 0;
 
@@ -224,6 +227,8 @@ export function initHeroChromeAnim(object) {
     pointerInside = false;
     pointerX = null;
     pointerY = null;
+    smoothPointerX = null;
+    smoothPointerY = null;
   };
 
   const endDrag = (event) => {
@@ -254,16 +259,27 @@ export function initHeroChromeAnim(object) {
       && pointerX !== null
       && pointerY !== null;
 
+    if (canFlee) {
+      if (smoothPointerX === null || smoothPointerY === null) {
+        smoothPointerX = pointerX;
+        smoothPointerY = pointerY;
+      } else {
+        const pointerLerp = 1 - Math.pow(1 - POINTER_FOLLOW, frameScale);
+        smoothPointerX += (pointerX - smoothPointerX) * pointerLerp;
+        smoothPointerY += (pointerY - smoothPointerY) * pointerLerp;
+      }
+    }
+
     items.forEach((item) => {
       let targetX = 0;
       let targetY = 0;
 
-      if (canFlee) {
+      if (canFlee && smoothPointerX !== null && smoothPointerY !== null) {
         const box = item.el.getBoundingClientRect();
         const cx = box.left + box.width / 2 - item.fleePxX;
         const cy = box.top + box.height / 2 - item.fleePxY;
-        const dx = cx - pointerX;
-        const dy = cy - pointerY;
+        const dx = cx - smoothPointerX;
+        const dy = cy - smoothPointerY;
         const dist = Math.hypot(dx, dy);
 
         if (dist > 0 && dist < FLEE_RADIUS) {
