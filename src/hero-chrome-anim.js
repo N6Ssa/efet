@@ -121,10 +121,10 @@ export function initHeroChromeAnim(object) {
   }));
 
   const fleeEnabled = !isCoarsePointer && !reducedMotion;
-  const FLEE_RADIUS = 190;
-  const MAX_FLEE = 62;
-  const FLEE_SPRING = 0.055;
-  const FLEE_DAMPING = 0.82;
+  const FLEE_RADIUS = 260;
+  const MAX_FLEE = 110;
+  const FLEE_SPRING = 0.045;
+  const FLEE_DAMPING = 0.84;
 
   let rafId = 0;
   let activeItem = null;
@@ -268,7 +268,7 @@ export function initHeroChromeAnim(object) {
 
         if (dist > 0 && dist < FLEE_RADIUS) {
           const t = 1 - dist / FLEE_RADIUS;
-          const ease = t * t;
+          const ease = t * t * (3 - 2 * t);
           const mag = MAX_FLEE * ease;
           targetX = (dx / dist) * mag;
           targetY = (dy / dist) * mag;
