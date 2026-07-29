@@ -108,10 +108,8 @@ export function initHeroChromeAnim(object) {
 
   const items = metalAssets.map((el, index) => ({
     el,
-    phase: index * 1.35,
-    freq: 0.62 + index * 0.07,
-    ampX: 1.6 + (index % 3) * 0.35,
-    ampY: 2.2 + (index % 2) * 0.45,
+    phase: index * 0.78,
+    ampY: 3.2 + (index % 2) * 0.6,
     dragPxX: 0,
     dragPxY: 0,
     fleePxX: 0,
@@ -284,8 +282,9 @@ export function initHeroChromeAnim(object) {
           const t = 1 - dist / FLEE_RADIUS;
           const ease = t * t * (3 - 2 * t);
           const mag = MAX_FLEE * ease;
-          targetX = (dx / dist) * mag;
-          targetY = (dy / dist) * mag;
+          const softenedDistance = Math.max(dist, 32);
+          targetX = (dx / softenedDistance) * mag;
+          targetY = (dy / softenedDistance) * mag;
         }
       }
 
@@ -307,12 +306,14 @@ export function initHeroChromeAnim(object) {
     updateFlee(time);
 
     items.forEach((item) => {
-      const waveX = reducedMotion
-        ? 0
-        : Math.sin(time * 0.001 * item.freq + item.phase) * item.ampX;
+      const waveTime = time * 0.00072;
+      const waveX = 0;
       const waveY = reducedMotion
         ? 0
-        : Math.cos(time * 0.001 * item.freq * 0.88 + item.phase * 1.05) * item.ampY;
+        : (
+          Math.sin(waveTime + item.phase) * item.ampY
+          + Math.sin(waveTime * 0.48 + item.phase * 0.62) * 0.8
+        );
 
       const tx = waveX + item.dragPxX + item.fleePxX;
       const ty = waveY + item.dragPxY + item.fleePxY;
