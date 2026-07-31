@@ -74,10 +74,10 @@ body.t-body {
 .hero-metal-layer {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -3.5%;
   width: 100%;
   aspect-ratio: 488.04 / 288.69;
-  z-index: 30;
+  z-index: 50;
   pointer-events: none;
   overflow: visible;
 }
@@ -420,6 +420,10 @@ body.t-body {
     overflow: visible;
     z-index: 1;
     touch-action: pan-y;
+  }
+
+  .hero-metal-layer {
+    top: 0;
   }
 
   .hero-chrome-stage .efet-web-elements-fragment {
