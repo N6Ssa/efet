@@ -105,11 +105,12 @@ export function initHeroChromeAnim(object) {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarsePointer = window.matchMedia('(max-width: 959px), (pointer: coarse)').matches;
-  const mobileScale = window.matchMedia('(max-width: 959px)').matches ? 1.43 : 1;
+  const isMobileLayout = window.matchMedia('(max-width: 959px)').matches;
+  const mobileScale = isMobileLayout ? 1.43 : 1;
 
   const items = metalAssets.map((el, index) => ({
     el,
-    phase: index * 0.78,
+    phase: index * -0.78,
     ampY: 3.2 + (index % 2) * 0.6,
     dragPxX: 0,
     dragPxY: 0,
@@ -314,6 +315,7 @@ export function initHeroChromeAnim(object) {
         : (
           Math.sin(waveTime + item.phase) * item.ampY
           + Math.sin(waveTime * 0.48 + item.phase * 0.62) * 0.8
+          + (isMobileLayout ? (1 - Math.cos(waveTime + item.phase)) * 2.4 : 0)
         );
 
       const tx = waveX + item.dragPxX + item.fleePxX;

@@ -12,9 +12,9 @@ const METAL_ASSETS = [
   ['cone', 'cone'],
   ['sphere', 'sphere'],
   ['cube', 'cube'],
-  ['blob', 'blob'],
-  ['torus', 'torus'],
   ['wave', 'wave'],
+  ['torus', 'torus'],
+  ['blob', 'blob'],
 ];
 
 let cleanup;
