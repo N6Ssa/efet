@@ -110,7 +110,7 @@ export function initHeroChromeAnim(object) {
   const items = metalAssets.map((el, index) => ({
     el,
     phase: index * -0.82,
-    fallDistance: 24 + index * 3,
+    fallDistance: 50 + index * 5,
     dragPxX: 0,
     dragPxY: 0,
     fleePxX: 0,
@@ -307,7 +307,7 @@ export function initHeroChromeAnim(object) {
     updateFlee(time);
 
     items.forEach((item) => {
-      const waveTime = time * 0.00072;
+      const waveTime = time * 0.0009;
       const waveX = 0;
       const waveY = reducedMotion
         ? 0
