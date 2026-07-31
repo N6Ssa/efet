@@ -4,7 +4,7 @@
 
 const HERO_GLOW_COLOR = '#ec6ea3';
 const HERO_GLOW_CX = '150';
-const HERO_GLOW_CY = '143';
+const HERO_GLOW_CY = '153';
 const HERO_GLOW_R = '120';
 const HERO_GLOW_STOPS = [
   ['0%', '0.95'],
