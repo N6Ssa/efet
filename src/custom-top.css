@@ -427,7 +427,7 @@ body.t-body {
   }
 
   .hero-chrome-stage .efet-web-elements-fragment {
-    transform: scale(2);
+    transform: scale(1.5);
     transform-origin: 50% 50%;
   }
 
