@@ -87,10 +87,7 @@ function mountHeroWebElements(mountNode) {
 
   const onLoad = () => bootChromeAnim(objectEl);
   objectEl.addEventListener('load', onLoad);
-
-  if (objectEl.contentDocument?.documentElement) {
-    onLoad();
-  }
+  bootChromeAnim(objectEl);
 }
 
 mountHeroWebElements(document.getElementById('efet-web-elements-root'));

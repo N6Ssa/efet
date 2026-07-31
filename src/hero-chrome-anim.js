@@ -95,8 +95,7 @@ export function prepareHeroSvgLayer(object) {
 
 export function initHeroChromeAnim(object) {
   const hero = document.querySelector('.hero');
-  const doc = object?.contentDocument;
-  if (!hero || !doc?.documentElement) return undefined;
+  if (!hero) return undefined;
 
   prepareHeroSvgLayer(object);
 
