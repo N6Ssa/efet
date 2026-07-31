@@ -315,7 +315,7 @@ export function initHeroChromeAnim(object) {
         : (
           Math.sin(waveTime + item.phase) * item.ampY
           + Math.sin(waveTime * 0.48 + item.phase * 0.62) * 0.8
-          + (isMobileLayout ? (1 - Math.cos(waveTime + item.phase)) * 2.4 : 0)
+          + (1 - Math.cos(waveTime + item.phase)) * 2.4
         );
 
       const tx = waveX + item.dragPxX + item.fleePxX;
