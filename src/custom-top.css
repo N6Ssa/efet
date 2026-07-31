@@ -427,7 +427,7 @@ body.t-body {
   }
 
   .hero-chrome-stage .efet-web-elements-fragment {
-    transform: scale(1.18);
+    transform: scale(3);
     transform-origin: 50% 50%;
   }
 
@@ -582,10 +582,6 @@ body.t-body {
 }
 
 @media (max-width: 639px) {
-  .hero-chrome-stage .efet-web-elements-fragment {
-    transform: scale(1.28);
-  }
-
   .hero {
     padding: 8px 8px 12px;
     gap: 5px;

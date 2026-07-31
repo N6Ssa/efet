@@ -105,6 +105,7 @@ export function initHeroChromeAnim(object) {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarsePointer = window.matchMedia('(max-width: 959px), (pointer: coarse)').matches;
+  const mobileScale = window.matchMedia('(max-width: 959px)').matches ? 3 : 1;
 
   const items = metalAssets.map((el, index) => ({
     el,
@@ -317,7 +318,7 @@ export function initHeroChromeAnim(object) {
 
       const tx = waveX + item.dragPxX + item.fleePxX;
       const ty = waveY + item.dragPxY + item.fleePxY;
-      item.el.style.transform = `translate3d(${tx.toFixed(3)}px, ${ty.toFixed(3)}px, 0)`;
+      item.el.style.transform = `translate3d(${tx.toFixed(3)}px, ${ty.toFixed(3)}px, 0) scale(${mobileScale})`;
     });
 
     rafId = requestAnimationFrame(tick);
