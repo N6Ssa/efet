@@ -111,7 +111,7 @@ export function initHeroChromeAnim(object) {
   const items = metalAssets.map((el, index) => ({
     el,
     phase: index * -0.82,
-    flowDepth: 5.5 + index * 0.7,
+    fallDistance: 24 + index * 3,
     dragPxX: 0,
     dragPxY: 0,
     fleePxX: 0,
@@ -312,10 +312,7 @@ export function initHeroChromeAnim(object) {
       const waveX = 0;
       const waveY = reducedMotion
         ? 0
-        : (
-          Math.sin(waveTime * 0.42 + item.phase * 0.55) * 0.7
-          + (1 - Math.cos(waveTime + item.phase)) * item.flowDepth
-        );
+        : ((1 - Math.cos(waveTime + item.phase)) / 2) * item.fallDistance;
 
       const tx = waveX + item.dragPxX + item.fleePxX;
       const ty = waveY + item.dragPxY + item.fleePxY;
