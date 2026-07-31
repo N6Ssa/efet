@@ -27,8 +27,10 @@ function resolveMetalAssetUrl(name) {
 }
 
 function mountMetalAssets(mountNode) {
+  const hero = mountNode.closest('.hero');
   const chromeStage = mountNode.closest('.hero-chrome-stage') ?? mountNode;
-  if (chromeStage.querySelector('.hero-metal-layer')) return;
+  const existingLayer = hero?.querySelector('.hero-metal-layer');
+  if (existingLayer) return;
 
   const layer = document.createElement('div');
   layer.className = 'hero-metal-layer';
@@ -42,7 +44,16 @@ function mountMetalAssets(mountNode) {
     layer.appendChild(image);
   });
 
-  chromeStage.appendChild(layer);
+  const mobileLayout = window.matchMedia('(max-width: 959px)');
+  const syncLayerHost = () => {
+    const host = mobileLayout.matches ? chromeStage : (hero ?? chromeStage);
+    if (layer.parentElement !== host) {
+      host.appendChild(layer);
+    }
+  };
+
+  syncLayerHost();
+  mobileLayout.addEventListener?.('change', syncLayerHost);
 }
 
 function bootChromeAnim(objectEl) {
