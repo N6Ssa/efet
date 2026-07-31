@@ -284,7 +284,7 @@ export function initHeroChromeAnim(object) {
           const mag = MAX_FLEE * ease;
           const softenedDistance = Math.max(dist, 32);
           targetX = (dx / softenedDistance) * mag;
-          targetY = (dy / softenedDistance) * mag;
+          targetY = 0;
         }
       }
 
