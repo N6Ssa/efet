@@ -77,8 +77,9 @@ body.t-body {
   top: 0;
   width: 100%;
   aspect-ratio: 488.04 / 288.69;
-  z-index: 2;
+  z-index: 30;
   pointer-events: none;
+  overflow: visible;
 }
 
 /* Logo is drawn in the SVG chrome layer — HTML wordmark kept for SEO only */

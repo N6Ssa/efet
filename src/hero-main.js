@@ -27,7 +27,8 @@ function resolveMetalAssetUrl(name) {
 }
 
 function mountMetalAssets(mountNode) {
-  if (mountNode.querySelector('.hero-metal-layer')) return;
+  const chromeStage = mountNode.closest('.hero-chrome-stage') ?? mountNode;
+  if (chromeStage.querySelector('.hero-metal-layer')) return;
 
   const layer = document.createElement('div');
   layer.className = 'hero-metal-layer';
@@ -41,7 +42,7 @@ function mountMetalAssets(mountNode) {
     layer.appendChild(image);
   });
 
-  mountNode.appendChild(layer);
+  chromeStage.appendChild(layer);
 }
 
 function bootChromeAnim(objectEl) {
