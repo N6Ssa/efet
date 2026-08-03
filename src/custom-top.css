@@ -170,7 +170,7 @@ body.t-body {
   height: calc(var(--header-h) / var(--base-h) * 100cqh);
   background: #1f1f1f;
   border-radius: calc(var(--header-h) * 0.1 / var(--base-h) * 100cqh);
-  overflow: hidden;
+  overflow: visible;
   z-index: 20;
 }
 
@@ -207,10 +207,9 @@ body.t-body {
 
 .header-phone,
 .header-email,
-.header-cta {
+.header-cta-stack {
   position: absolute;
   z-index: 25;
-  text-decoration: none;
   box-sizing: border-box;
 }
 
@@ -236,15 +235,24 @@ body.t-body {
   transform: translateY(-50%);
 }
 
-.header-cta {
+.header-cta-stack {
   left: calc(619 / var(--header-ref-w) * 100%);
   top: calc(7 / var(--header-h) * 100%);
   width: calc(151 / var(--header-ref-w) * 100%);
   height: calc(22 / var(--header-h) * 100%);
   display: flex;
+  flex-direction: column;
+  gap: calc(4 / var(--base-h) * 100cqh);
+}
+
+.header-cta {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 0 0 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #c85a22 0%, #e07030 100%);
   border-radius: calc(999 / var(--base-h) * 100cqh);
   color: #ffffff !important;
   font-size: calc(8.5 / var(--base-w) * 100cqw);
@@ -253,6 +261,20 @@ body.t-body {
   text-align: center;
   white-space: normal;
   padding: 0 calc(5 / var(--base-w) * 100cqw);
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.header-cta--orange {
+  background: linear-gradient(90deg, #c85a22 0%, #e07030 100%);
+}
+
+.header-cta--green {
+  background: linear-gradient(90deg, #2f8f54 0%, #52b870 100%);
+}
+
+.header-cta--pink {
+  background: linear-gradient(90deg, #d85f9a 0%, #ee8fbd 100%);
 }
 
 .header-phone:hover {
@@ -473,7 +495,7 @@ body.t-body {
 
   .header-phone,
   .header-email,
-  .header-cta {
+  .header-cta-stack {
     position: relative;
     left: auto;
     top: auto;
@@ -490,11 +512,19 @@ body.t-body {
     white-space: nowrap;
   }
 
-  .header-cta {
+  .header-cta-stack {
     flex: 0 0 auto;
-    width: auto;
+    width: 140px;
     max-width: 140px;
+    height: auto;
+    gap: 4px;
+  }
+
+  .header-cta {
+    width: 100%;
+    max-width: none;
     height: 30px;
+    flex: 0 0 30px;
     padding: 0 10px;
     font-size: 9px;
     line-height: 1.1;
@@ -602,9 +632,14 @@ body.t-body {
     font-size: 10px;
   }
 
-  .header-cta {
+  .header-cta-stack {
+    width: 118px;
     max-width: 118px;
+  }
+
+  .header-cta {
     height: 28px;
+    flex-basis: 28px;
     font-size: 8px;
     padding: 0 8px;
   }
@@ -646,8 +681,12 @@ body.t-body {
     font-size: 9px;
   }
 
-  .header-cta {
+  .header-cta-stack {
+    width: 96px;
     max-width: 96px;
+  }
+
+  .header-cta {
     font-size: 7px;
     padding: 0 6px;
   }
