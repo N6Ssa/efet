@@ -242,7 +242,7 @@ body.t-body {
   height: calc(22 / var(--header-h) * 100%);
   display: flex;
   flex-direction: column;
-  gap: calc(4 / var(--base-h) * 100cqh);
+  gap: calc(10 / var(--base-h) * 100cqh);
 }
 
 .header-cta {
@@ -271,10 +271,12 @@ body.t-body {
 
 .header-cta--green {
   background: linear-gradient(90deg, #2f8f54 0%, #52b870 100%);
+  border-radius: 6px;
 }
 
 .header-cta--pink {
   background: linear-gradient(90deg, #d85f9a 0%, #ee8fbd 100%);
+  border-radius: 6px;
 }
 
 .header-phone:hover {
@@ -517,7 +519,7 @@ body.t-body {
     width: 140px;
     max-width: 140px;
     height: auto;
-    gap: 4px;
+    gap: 8px;
   }
 
   .header-cta {
