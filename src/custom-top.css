@@ -468,14 +468,16 @@ body.t-body {
     transform: none;
     width: 100%;
     height: auto;
-    min-height: 40px;
+    min-height: clamp(72px, 17vw, 104px);
     flex: 0 0 auto;
     order: 1;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 10px;
+    margin-bottom: 92px;
+    padding: 0 18px;
     box-sizing: border-box;
+    border-radius: 0;
   }
 
   .top-header-bar {
@@ -486,15 +488,17 @@ body.t-body {
     position: relative;
     left: auto;
     top: auto;
-    width: 80px;
-    height: 34px;
+    width: 58%;
+    height: 100%;
     flex: 0 0 auto;
+    overflow: hidden;
   }
 
   .brand-mark img,
   .brand-mark svg {
-    height: 100%;
+    height: 112%;
     width: auto;
+    max-width: none;
   }
 
   .header-phone,
@@ -512,16 +516,43 @@ body.t-body {
 
   .header-phone {
     margin-left: auto;
-    font-size: 11px;
+    width: clamp(48px, 11vw, 68px);
+    height: clamp(48px, 11vw, 68px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #e5681e;
+    color: transparent !important;
+    font-size: 0;
     white-space: nowrap;
   }
 
+  .header-phone::before {
+    content: '\260E';
+    color: #ffffff;
+    font-size: clamp(23px, 5vw, 31px);
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    transform: rotate(-18deg);
+  }
+
   .header-cta-stack {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 18px;
+    left: auto;
     flex: 0 0 auto;
     width: 140px;
     max-width: 140px;
     height: auto;
     gap: 0;
+  }
+
+  .header-cta--orange {
+    display: none;
   }
 
   .header-cta {
@@ -630,18 +661,20 @@ body.t-body {
   }
 
   .hero-header {
-    min-height: 44px;
-    padding: 5px 8px;
+    min-height: 72px;
+    padding: 0 12px;
     gap: 6px;
   }
 
   .brand-mark {
-    width: 72px;
-    height: 32px;
+    width: 58%;
+    height: 100%;
   }
 
   .header-phone {
-    font-size: 10px;
+    width: 48px;
+    height: 48px;
+    font-size: 0;
   }
 
   .header-cta-stack {
@@ -685,12 +718,14 @@ body.t-body {
   }
 
   .brand-mark {
-    width: 64px;
-    height: 28px;
+    width: 58%;
+    height: 100%;
   }
 
   .header-phone {
-    font-size: 9px;
+    width: 46px;
+    height: 46px;
+    font-size: 0;
   }
 
   .header-cta-stack {
