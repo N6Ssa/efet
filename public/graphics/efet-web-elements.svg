@@ -3122,6 +3122,7 @@
       }
 
       .chrome-mesh {
+        display: none;
         filter: url(#chrome-polish);
         color-interpolation: sRGB;
         color-rendering: optimizeQuality;
