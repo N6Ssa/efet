@@ -255,11 +255,11 @@ body.t-body {
   justify-content: center;
   border-radius: calc(999 / var(--base-h) * 100cqh);
   color: #ffffff !important;
-  font-size: calc(8.5 / var(--base-w) * 100cqw);
+  font-size: calc(7.5 / var(--base-w) * 100cqw);
   font-weight: 500;
   line-height: 1.05;
   text-align: center;
-  white-space: normal;
+  white-space: nowrap;
   padding: 0 calc(5 / var(--base-w) * 100cqw);
   text-decoration: none;
   box-sizing: border-box;
@@ -530,7 +530,7 @@ body.t-body {
     height: 30px;
     flex: 0 0 30px;
     padding: 0 10px;
-    font-size: 9px;
+    font-size: 7px;
     line-height: 1.1;
   }
 
@@ -652,7 +652,7 @@ body.t-body {
   .header-cta {
     height: 28px;
     flex-basis: 28px;
-    font-size: 8px;
+    font-size: 7px;
     padding: 0 8px;
   }
 
@@ -699,7 +699,7 @@ body.t-body {
   }
 
   .header-cta {
-    font-size: 7px;
+    font-size: 6.5px;
     padding: 0 6px;
   }
 
