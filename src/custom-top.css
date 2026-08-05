@@ -677,8 +677,8 @@ body.t-body {
 
 @media (max-width: 639px) {
   .hero-chrome-stage {
-    transform: translateY(-40%);
-    margin-bottom: -23.66%;
+    transform: translateY(-60%);
+    margin-bottom: -35.49%;
   }
 
   .header-cta--orange {
