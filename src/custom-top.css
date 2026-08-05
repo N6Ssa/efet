@@ -431,7 +431,7 @@ body.t-body {
 /* ── Tablet & mobile: stack blocks — nothing hidden, no overlap ── */
 @media (max-width: 959px) {
   .hero-program-buttons {
-    top: calc(16.4087vw + 12px);
+    top: 8px;
     right: 18px;
     width: 140px;
   }
