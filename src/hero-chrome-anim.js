@@ -107,8 +107,8 @@ export function initHeroChromeAnim(object) {
   const isMobileLayout = window.matchMedia('(max-width: 959px)').matches;
   const isPhoneLayout = window.matchMedia('(max-width: 639px)').matches;
   const mobileScale = isMobileLayout ? 1.43 : 1;
-  const waveSpeed = isPhoneLayout ? 0.00045 : 0.0009;
-  const fallDistance = isPhoneLayout ? 50 : 65;
+  const waveSpeed = isPhoneLayout ? 0.00035 : 0.0009;
+  const fallDistance = isPhoneLayout ? 20 : 65;
 
   const items = metalAssets.map((el) => ({
     el,
