@@ -733,7 +733,7 @@ body.t-body {
   .header-cta {
     height: 34px;
     flex-basis: 34px;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0 8px;
   }
 
@@ -776,7 +776,7 @@ body.t-body {
   }
 
   .header-cta {
-    font-size: 13px;
+    font-size: 11px;
     padding: 0 6px;
   }
 
