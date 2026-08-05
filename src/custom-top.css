@@ -373,11 +373,11 @@ body.t-body {
 /* ── Bottom panel: 5 separate dark cards ── */
 .hero-info-panel {
   --info-panel-w: 610;
-  --info-panel-h: 42;
+  --info-panel-h: 50;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: calc(521 / var(--base-h) * 100cqh);
+  top: calc(517 / var(--base-h) * 100cqh);
   width: calc(var(--info-panel-w) / var(--base-w) * 100cqw);
   height: calc(var(--info-panel-h) / var(--base-h) * 100cqh);
   display: grid;
