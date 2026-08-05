@@ -390,7 +390,7 @@ body.t-body {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding: calc(5 / var(--info-panel-h) * 100%) calc(11 / var(--base-w) * 100cqw);
   background: #1f1f1f;
   border-radius: calc(2 / var(--base-w) * 100cqw);
@@ -399,7 +399,7 @@ body.t-body {
   font-weight: 400;
   line-height: 1.2;
   text-transform: uppercase;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
   box-sizing: border-box;
 }
