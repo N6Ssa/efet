@@ -737,6 +737,11 @@ body.t-body {
     padding: 0 8px;
   }
 
+  .header-cta--green,
+  .header-cta--pink {
+    border-radius: 999px;
+  }
+
   .hero-kicker {
     font-size: clamp(11px, 3.2vw, 13px);
   }
