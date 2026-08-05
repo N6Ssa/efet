@@ -743,8 +743,8 @@ body.t-body {
   }
 
   .hero-kicker {
-    max-width: calc(100% - 174px);
-    margin: -72px auto 96px 10px;
+    max-width: 72%;
+    margin: 16px auto 8px 10px;
     align-self: flex-start;
     font-size: clamp(11px, 3.2vw, 13px);
   }
