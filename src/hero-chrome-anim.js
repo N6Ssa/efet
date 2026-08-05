@@ -105,11 +105,14 @@ export function initHeroChromeAnim(object) {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isCoarsePointer = window.matchMedia('(max-width: 959px), (pointer: coarse)').matches;
   const isMobileLayout = window.matchMedia('(max-width: 959px)').matches;
+  const isPhoneLayout = window.matchMedia('(max-width: 639px)').matches;
   const mobileScale = isMobileLayout ? 1.43 : 1;
+  const waveSpeed = isPhoneLayout ? 0.00045 : 0.0009;
+  const fallDistance = isPhoneLayout ? 50 : 65;
 
   const items = metalAssets.map((el) => ({
     el,
-    fallDistance: 65,
+    fallDistance,
     dragPxX: 0,
     dragPxY: 0,
     fleePxX: 0,
@@ -306,7 +309,7 @@ export function initHeroChromeAnim(object) {
     updateFlee(time);
 
     items.forEach((item) => {
-      const waveTime = time * 0.0009;
+      const waveTime = time * waveSpeed;
       const waveX = 0;
       const waveY = reducedMotion
         ? 0
