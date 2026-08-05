@@ -287,9 +287,9 @@ body.t-body {
 
 .hero-program-buttons {
   position: absolute;
-  top: calc(22 / var(--base-h) * 100cqh);
-  right: calc(96 / var(--base-w) * 100cqw);
-  width: calc(151 / var(--base-w) * 100cqw);
+  top: calc(29 / var(--base-h) * 100cqh);
+  right: calc(228 / var(--base-w) * 100cqw);
+  width: calc(113 / var(--base-w) * 100cqw);
   display: flex;
   flex-direction: column;
   z-index: 25;
@@ -431,7 +431,7 @@ body.t-body {
 /* ── Tablet & mobile: stack blocks — nothing hidden, no overlap ── */
 @media (max-width: 959px) {
   .hero-program-buttons {
-    top: 12px;
+    top: calc(16.4087vw + 12px);
     right: 18px;
     width: 140px;
   }
