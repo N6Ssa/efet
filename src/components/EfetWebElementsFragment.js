@@ -7,7 +7,7 @@ export const EFET_WEB_VIEWBOX = Object.freeze({
   height: 288.69,
 });
 
-const SVG_URL = `${import.meta.env.BASE_URL}graphics/efet-web-elements.svg`;
+const SVG_URL = `${import.meta.env.BASE_URL}graphics/efet-web-elements.svg?v=static-figures-hidden`;
 
 function bootChromeAnim(objectEl, cleanupRef) {
   if (!objectEl) return;

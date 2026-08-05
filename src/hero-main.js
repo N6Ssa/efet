@@ -2,9 +2,9 @@ import { initHeroChromeAnim, prepareHeroSvgLayer } from './hero-chrome-anim.js';
 
 function resolveSvgUrl() {
   if (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL !== undefined) {
-    return `${import.meta.env.BASE_URL}graphics/efet-web-elements.svg`;
+    return `${import.meta.env.BASE_URL}graphics/efet-web-elements.svg?v=static-figures-hidden`;
   }
-  return '/public/graphics/efet-web-elements.svg';
+  return '/public/graphics/efet-web-elements.svg?v=static-figures-hidden';
 }
 
 const SVG_URL = resolveSvgUrl();
