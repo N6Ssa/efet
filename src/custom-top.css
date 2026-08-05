@@ -391,7 +391,7 @@ body.t-body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: calc(5 / var(--info-panel-h) * 100%) calc(11 / var(--base-w) * 100cqw);
+  padding: 0 calc(11 / var(--base-w) * 100cqw);
   background: #1f1f1f;
   border-radius: calc(2 / var(--base-w) * 100cqw);
   color: #ffffff;
