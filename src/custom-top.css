@@ -726,14 +726,14 @@ body.t-body {
   }
 
   .header-cta-stack {
-    width: 118px;
-    max-width: 118px;
+    width: 136px;
+    max-width: 136px;
   }
 
   .header-cta {
-    height: 28px;
-    flex-basis: 28px;
-    font-size: 7px;
+    height: 34px;
+    flex-basis: 34px;
+    font-size: 8px;
     padding: 0 8px;
   }
 
@@ -766,12 +766,12 @@ body.t-body {
   }
 
   .header-cta-stack {
-    width: 96px;
-    max-width: 96px;
+    width: 118px;
+    max-width: 118px;
   }
 
   .header-cta {
-    font-size: 6.5px;
+    font-size: 7.5px;
     padding: 0 6px;
   }
 
