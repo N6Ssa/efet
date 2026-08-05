@@ -473,7 +473,7 @@ body.t-body {
     width: calc(100% + 24px);
     height: auto;
     min-height: 0;
-    aspect-ratio: 640 / 106;
+    aspect-ratio: 646 / 106;
     flex: 0 0 auto;
     order: 1;
     display: block;
@@ -493,7 +493,7 @@ body.t-body {
     position: absolute;
     left: 0;
     top: 0;
-    width: 54.84375%;
+    width: 54.644%;
     height: 100%;
     overflow: hidden;
   }
@@ -520,9 +520,9 @@ body.t-body {
 
   .header-phone {
     position: absolute;
-    left: 72.8125%;
+    left: 72.4458%;
     top: 50%;
-    width: 11.5625%;
+    width: 11.4551%;
     height: auto;
     aspect-ratio: 1;
     margin-left: 0;
@@ -690,12 +690,12 @@ body.t-body {
   }
 
   .brand-mark {
-    width: 54.84375%;
+    width: 54.644%;
     height: 100%;
   }
 
   .header-phone {
-    width: 11.5625%;
+    width: 11.4551%;
     height: auto;
     font-size: 0;
   }
