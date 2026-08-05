@@ -372,7 +372,7 @@ body.t-body {
 
 /* ── Bottom panel: 5 separate dark cards ── */
 .hero-info-panel {
-  --info-panel-w: var(--chrome-bar-w);
+  --info-panel-w: 610;
   --info-panel-h: 42;
   position: absolute;
   left: 50%;
