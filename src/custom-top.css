@@ -224,6 +224,10 @@ body.t-body {
   transform: translateY(-50%);
 }
 
+.header-phone-icon {
+  display: none;
+}
+
 .header-email {
   color: #d86928 !important;
   font-size: calc(11.05 / var(--base-w) * 100cqw);
@@ -530,13 +534,25 @@ body.t-body {
     white-space: nowrap;
   }
 
-  .header-phone::before {
-    content: '\260E';
-    color: #ffffff;
-    font-size: clamp(23px, 5vw, 31px);
-    font-family: Arial, sans-serif;
-    line-height: 1;
-    transform: rotate(-18deg);
+  .header-phone-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .header-phone-icon {
+    display: block;
+    width: 62%;
+    height: 62%;
+    overflow: visible;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   }
 
   .header-cta-stack {
