@@ -289,7 +289,7 @@ body.t-body {
 
 .hero-program-buttons {
   position: absolute;
-  top: calc(29 / var(--base-h) * 100cqh);
+  top: calc(43 / var(--base-h) * 100cqh);
   right: calc(228 / var(--base-w) * 100cqw);
   width: calc(113 / var(--base-w) * 100cqw);
   display: flex;
@@ -329,7 +329,7 @@ body.t-body {
 /* ── Logo & copy ── */
 .hero-kicker {
   position: absolute;
-  left: calc(248 / var(--base-w) * 100cqw);
+  left: calc(263 / var(--base-w) * 100cqw);
   top: calc(182 / var(--base-h) * 100cqh);
   margin: 0;
   font-size: calc(11.05 / var(--base-w) * 100cqw);
