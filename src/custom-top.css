@@ -277,12 +277,14 @@ body.t-body {
   background: linear-gradient(90deg, #2f8f54 0%, #52b870 100%);
   border-radius: 6px;
   margin-top: calc(10 / var(--base-h) * 100cqh);
+  text-transform: uppercase;
 }
 
 .header-cta--pink {
   background: linear-gradient(90deg, #d85f9a 0%, #ee8fbd 100%);
   border-radius: 6px;
   margin-top: calc(3 / var(--base-h) * 100cqh);
+  text-transform: uppercase;
 }
 
 .hero-program-buttons {
