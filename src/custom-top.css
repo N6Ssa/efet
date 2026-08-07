@@ -793,6 +793,7 @@ body.t-body {
   .hero-info-panel {
     width: min(100%, 340px);
     gap: 11px;
+    margin-top: 16px;
     margin-bottom: 0;
   }
 
