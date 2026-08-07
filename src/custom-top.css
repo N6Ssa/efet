@@ -713,7 +713,7 @@ body.t-body {
   .hero-program-buttons .header-cta {
     height: 34px;
     flex-basis: 34px;
-    font-size: 10px;
+    font-size: 8px;
     border-radius: 999px;
   }
 
@@ -816,7 +816,7 @@ body.t-body {
   }
 
   .hero-program-buttons .header-cta {
-    font-size: 9px;
+    font-size: 7px;
   }
 
   .hero {
