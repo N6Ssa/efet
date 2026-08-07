@@ -300,17 +300,33 @@ body.t-body {
 
 .hero-program-buttons {
   position: absolute;
-  top: calc(43 / var(--base-h) * 100cqh);
-  right: calc(228 / var(--base-w) * 100cqw);
-  width: calc(113 / var(--base-w) * 100cqw);
+  top: 8px;
+  right: 25px;
+  width: 273px;
   display: flex;
   flex-direction: column;
   z-index: 25;
 }
 
 .hero-program-buttons .header-cta {
-  height: calc(22 / var(--base-h) * 100cqh);
-  flex: 0 0 calc(22 / var(--base-h) * 100cqh);
+  height: 45px;
+  flex: 0 0 45px;
+  font-size: 14px;
+}
+
+.hero-program-buttons .header-cta--green {
+  margin-top: 10px;
+}
+
+.hero-program-buttons .header-cta--pink {
+  margin-top: 3px;
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+  .hero-program-buttons {
+    right: 16px;
+    width: 235px;
+  }
 }
 
 .header-phone:hover {
@@ -453,6 +469,10 @@ body.t-body {
     height: 30px;
     flex-basis: 30px;
     font-size: 7px;
+  }
+
+  .hero-program-buttons .header-cta--green {
+    margin-top: 8px;
   }
 
   .hero-viewport {
