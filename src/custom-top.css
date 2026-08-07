@@ -9,20 +9,20 @@ body.t-body {
 }
 
 .hero-viewport {
-  min-height: 100vh;
+  min-height: 650px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   background: #fdfcf9;
 }
 
-/* Base grid: 1024 × 579 — exactly the reference image size. */
+/* Tilda desktop artboard: 1200 × 650. */
 .hero {
   --base-w: 1024;
   --base-h: 579;
   position: relative;
-  width: min(100vw, calc(100vh * 16 / 9));
-  height: min(100vh, calc(100vw * 9 / 16));
+  width: min(100vw, 1200px);
+  height: 650px;
   margin: 0 auto;
   background: #fdfcf9;
   overflow: hidden;
@@ -33,6 +33,17 @@ body.t-body {
   cursor: default;
   --chrome-bar-w: 586;
   --header-ref-w: 781;
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+  .hero-viewport {
+    min-height: 450px;
+  }
+
+  .hero {
+    width: min(100vw, 960px);
+    height: 450px;
+  }
 }
 
 /* ── EFET web elements (original Illustrator SVG via React) ── */
@@ -445,7 +456,7 @@ body.t-body {
   }
 
   .hero-viewport {
-    min-height: 0;
+    min-height: 510px;
     display: block;
     margin-bottom: 0;
     overflow-x: clip;
@@ -454,8 +465,8 @@ body.t-body {
   .hero {
     width: 100%;
     max-width: 100vw;
-    height: auto;
-    min-height: 0;
+    height: 510px;
+    min-height: 510px;
     aspect-ratio: unset;
     container-type: normal;
     display: flex;
@@ -705,6 +716,15 @@ body.t-body {
 }
 
 @media (max-width: 639px) {
+  .hero-viewport {
+    min-height: 720px;
+  }
+
+  .hero {
+    height: 720px;
+    min-height: 720px;
+  }
+
   .hero-program-buttons {
     right: 18px;
     width: 136px;
@@ -811,6 +831,15 @@ body.t-body {
 }
 
 @media (max-width: 479px) {
+  .hero-viewport {
+    min-height: 660px;
+  }
+
+  .hero {
+    height: 660px;
+    min-height: 660px;
+  }
+
   .hero-program-buttons {
     width: 118px;
   }
