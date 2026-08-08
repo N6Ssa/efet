@@ -397,7 +397,7 @@ body.t-body {
 .hero-subtitle {
   position: absolute;
   left: calc(452 / var(--base-w) * 100cqw);
-  top: calc(409 / var(--base-h) * 100cqh);
+  top: calc(419 / var(--base-h) * 100cqh);
   width: calc(210 / var(--base-w) * 100cqw);
   margin: 0;
   display: flex;
