@@ -53,7 +53,7 @@ body.t-body {
   z-index: 4;
   pointer-events: none;
   overflow: hidden;
-  transform: scale(1.1);
+  transform: scale(1.2);
   transform-origin: 50% 50%;
 }
 
@@ -477,6 +477,10 @@ body.t-body {
 
   .hero-program-buttons .header-cta--green {
     margin-top: 8px;
+  }
+
+  .efet-web-elements-root {
+    transform: scale(1.1);
   }
 
   .hero-viewport {
