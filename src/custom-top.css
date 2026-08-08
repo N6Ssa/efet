@@ -420,12 +420,12 @@ body.t-body {
 
 /* ── Bottom panel: 5 separate dark cards ── */
 .hero-info-panel {
-  --info-panel-w: 610;
-  --info-panel-h: 66;
+  --info-panel-w: 700;
+  --info-panel-h: 76;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: calc(509 / var(--base-h) * 100cqh);
+  top: calc(504 / var(--base-h) * 100cqh);
   width: calc(var(--info-panel-w) / var(--base-w) * 100cqw);
   height: calc(var(--info-panel-h) / var(--base-h) * 100cqh);
   display: grid;
@@ -441,7 +441,7 @@ body.t-body {
   justify-content: flex-start;
   padding: 0 calc(11 / var(--base-w) * 100cqw);
   background: #1f1f1f;
-  border-radius: calc(2 / var(--base-w) * 100cqw);
+  border-radius: 0;
   color: #ffffff;
   font-size: calc(9 / var(--base-w) * 100cqw);
   font-weight: 400;
@@ -719,7 +719,7 @@ body.t-body {
     top: auto;
     bottom: auto;
     transform: none;
-    width: min(100%, 360px);
+    width: min(100%, 380px);
     max-width: 94vw;
     height: auto;
     margin: 8px auto 16px;
@@ -729,15 +729,15 @@ body.t-body {
   }
 
   .info-card {
-    height: 64px;
-    min-height: 64px;
+    height: 72px;
+    min-height: 72px;
     font-size: clamp(12px, 3.4vw, 14px);
     font-weight: 400;
     line-height: 1.25;
     justify-content: flex-start;
     text-align: left;
     padding: 8px 16px;
-    border-radius: 10px;
+    border-radius: 0;
     box-sizing: border-box;
   }
 
@@ -839,21 +839,21 @@ body.t-body {
   }
 
   .hero-info-panel {
-    width: min(100%, 340px);
+    width: min(100%, 360px);
     gap: 11px;
     margin-top: 16px;
     margin-bottom: 0;
   }
 
   .info-card {
-    height: 64px;
-    min-height: 64px;
+    height: 70px;
+    min-height: 70px;
     font-size: clamp(12px, 3.5vw, 14px);
     font-weight: 400;
     justify-content: flex-start;
     text-align: left;
     padding: 8px 18px;
-    border-radius: 10px;
+    border-radius: 0;
     box-sizing: border-box;
   }
 }
@@ -891,20 +891,20 @@ body.t-body {
   }
 
   .hero-info-panel {
-    width: min(100%, 320px);
+    width: min(100%, 340px);
     gap: 10px;
     margin-bottom: 0;
   }
 
   .info-card {
-    height: 60px;
-    min-height: 60px;
+    height: 66px;
+    min-height: 66px;
     font-size: clamp(11px, 3.3vw, 13px);
     font-weight: 400;
     justify-content: flex-start;
     text-align: left;
     padding: 8px 16px;
-    border-radius: 10px;
+    border-radius: 0;
     box-sizing: border-box;
   }
 }
