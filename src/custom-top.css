@@ -361,9 +361,9 @@ body.t-body {
 .hero-kicker {
   position: absolute;
   left: calc(263 / var(--base-w) * 100cqw);
-  top: calc(182 / var(--base-h) * 100cqh);
+  top: calc(155 / var(--base-h) * 100cqh);
   margin: 0;
-  font-size: calc(11.05 / var(--base-w) * 100cqw);
+  font-size: calc(14 / var(--base-w) * 100cqw);
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
