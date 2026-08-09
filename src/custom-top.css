@@ -691,9 +691,9 @@ body.t-body {
     transform: none;
     width: auto;
     max-width: 72%;
-    margin: 16px 28px 8px auto;
+    margin: 16px auto 8px 28px;
     padding: 0 4px;
-    align-self: flex-end;
+    align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -846,8 +846,8 @@ body.t-body {
 
   .hero-kicker {
     max-width: 46%;
-    margin: 16px 24px 8px auto;
-    align-self: flex-end;
+    margin: 16px auto 8px 24px;
+    align-self: flex-start;
     font-size: clamp(11px, 3.2vw, 13px);
   }
 
