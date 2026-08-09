@@ -550,7 +550,7 @@ body.t-body {
     margin-left: -12px;
     padding: 0;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-radius: 0;
   }
 
   .top-header-bar {
