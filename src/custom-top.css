@@ -775,12 +775,12 @@ body.t-body {
   }
 
   .hero-chrome-stage {
-    transform: translateY(calc(-20% + 10px));
+    transform: translateY(-8%);
     margin-bottom: -11.83%;
   }
 
   .hero-chrome-stage .efet-web-elements-fragment {
-    transform: scale(1.35);
+    transform: scale(1.15);
   }
 
   .hero-metal-sphere {
@@ -845,17 +845,21 @@ body.t-body {
   }
 
   .hero-kicker {
-    max-width: 72%;
-    margin: 16px auto 8px 10px;
-    align-self: flex-start;
+    max-width: 46%;
+    margin: 16px 24px 8px auto;
+    align-self: flex-end;
     font-size: clamp(11px, 3.2vw, 13px);
   }
 
   .hero-info-panel {
-    width: min(100%, 380px);
-    gap: 11px;
+    width: min(70vw, 410px);
+    max-width: none;
+    gap: 5px;
     margin-top: 16px;
     margin-bottom: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #fdfcf9;
   }
 
   .info-card {
@@ -866,8 +870,8 @@ body.t-body {
     justify-content: flex-start;
     text-align: left;
     padding: 8px 18px;
-    border-radius: 20px !important;
-    clip-path: inset(0 round 20px);
+    border-radius: 0 !important;
+    clip-path: none;
     box-sizing: border-box;
   }
 }
@@ -905,8 +909,8 @@ body.t-body {
   }
 
   .hero-info-panel {
-    width: min(100%, 360px);
-    gap: 10px;
+    width: 70vw;
+    gap: 5px;
     margin-bottom: 0;
   }
 
@@ -918,8 +922,8 @@ body.t-body {
     justify-content: flex-start;
     text-align: left;
     padding: 8px 16px;
-    border-radius: 20px !important;
-    clip-path: inset(0 round 20px);
+    border-radius: 0 !important;
+    clip-path: none;
     box-sizing: border-box;
   }
 }
