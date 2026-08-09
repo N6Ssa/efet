@@ -859,7 +859,7 @@ body.t-body {
     margin-top: 16px;
     margin-bottom: 0;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     background: #fdfcf9;
   }
 
@@ -878,8 +878,8 @@ body.t-body {
 
   .info-card:first-child,
   .info-card:last-child {
-    border-radius: 20px !important;
-    clip-path: inset(0 round 20px);
+    border-radius: 20px 20px 0 0 !important;
+    clip-path: inset(0 round 20px 20px 0 0);
   }
 }
 
