@@ -12,12 +12,37 @@ const HERO_GLOW_STOPS = [
   ['66%', '0'],
 ];
 
+function makeHeaderPhoneWhite(doc) {
+  const phoneShapes = doc.querySelectorAll('.hero-header-svg path, .hero-header-svg polygon, .hero-header-svg rect');
+
+  phoneShapes.forEach((shape) => {
+    let box;
+
+    try {
+      box = shape.getBBox();
+    } catch {
+      return;
+    }
+
+    const isPhoneGlyph = box.x >= 190
+      && box.x + box.width <= 338
+      && box.y >= 27
+      && box.y + box.height <= 36;
+
+    if (isPhoneGlyph) {
+      shape.style.fill = '#ffffff';
+    }
+  });
+}
+
 export function prepareHeroSvgLayer(object) {
   const doc = object?.contentDocument;
   if (!doc?.documentElement) return;
 
   const svg = doc.documentElement;
   const svgNS = 'http://www.w3.org/2000/svg';
+
+  makeHeaderPhoneWhite(doc);
 
   doc.querySelectorAll('rect.st110').forEach((rect) => {
     rect.setAttribute('visibility', 'hidden');
