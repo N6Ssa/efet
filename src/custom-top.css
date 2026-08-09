@@ -441,7 +441,7 @@ body.t-body {
   justify-content: flex-start;
   padding: 0 calc(11 / var(--base-w) * 100cqw);
   background: #1f1f1f;
-  border-radius: 0;
+  border-radius: 10px;
   color: #ffffff;
   font-size: calc(9 / var(--base-w) * 100cqw);
   font-weight: 400;
@@ -550,7 +550,7 @@ body.t-body {
     margin-left: -12px;
     padding: 0;
     box-sizing: border-box;
-    border-radius: 0;
+    border-radius: 10px;
   }
 
   .top-header-bar {
@@ -737,7 +737,7 @@ body.t-body {
     justify-content: flex-start;
     text-align: left;
     padding: 8px 16px;
-    border-radius: 0;
+    border-radius: 10px;
     box-sizing: border-box;
   }
 
@@ -853,7 +853,7 @@ body.t-body {
     justify-content: flex-start;
     text-align: left;
     padding: 8px 18px;
-    border-radius: 0;
+    border-radius: 10px;
     box-sizing: border-box;
   }
 }
