@@ -775,8 +775,8 @@ body.t-body {
   }
 
   .hero-chrome-stage {
-    transform: translateY(-3%);
-    margin-bottom: -6.83%;
+    transform: translateY(3%);
+    margin-bottom: -0.83%;
   }
 
   .hero-chrome-stage .efet-web-elements-fragment {
