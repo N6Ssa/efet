@@ -69,6 +69,10 @@ body.t-body {
   .hero-subtitle {
     transform: translateY(-25px);
   }
+
+  .hero-metal-cone {
+    top: 8.3%;
+  }
 }
 
 .hero.hero--chrome-drag {
