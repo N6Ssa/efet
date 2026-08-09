@@ -876,10 +876,14 @@ body.t-body {
     box-sizing: border-box;
   }
 
-  .info-card:first-child,
-  .info-card:last-child {
+  .info-card:first-child {
     border-radius: 20px 20px 0 0 !important;
     clip-path: inset(0 round 20px 20px 0 0);
+  }
+
+  .info-card:last-child {
+    border-radius: 0 0 20px 20px !important;
+    clip-path: inset(0 round 0 0 20px 20px);
   }
 }
 
