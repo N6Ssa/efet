@@ -431,6 +431,9 @@ body.t-body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: calc(2 / var(--base-w) * 100cqw);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fdfcf9;
   z-index: 20;
 }
 
@@ -441,8 +444,8 @@ body.t-body {
   justify-content: flex-start;
   padding: 0 calc(11 / var(--base-w) * 100cqw);
   background: #1f1f1f;
-  border-radius: 20px !important;
-  clip-path: inset(0 round 20px);
+  border-radius: 0 !important;
+  clip-path: none;
   overflow: hidden;
   color: #ffffff;
   font-size: calc(9 / var(--base-w) * 100cqw);
@@ -727,6 +730,9 @@ body.t-body {
     margin: 8px auto 16px;
     grid-template-columns: 1fr;
     gap: 12px;
+    border-radius: 0;
+    overflow: visible;
+    background: transparent;
     z-index: 5;
   }
 
