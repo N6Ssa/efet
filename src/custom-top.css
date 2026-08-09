@@ -854,6 +854,7 @@ body.t-body {
   .hero-info-panel {
     width: min(70vw, 410px);
     max-width: none;
+    flex: 0 0 auto;
     gap: 5px;
     margin-top: 16px;
     margin-bottom: 0;
