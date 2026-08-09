@@ -9,7 +9,7 @@ body.t-body {
 }
 
 .hero-viewport {
-  min-height: 650px;
+  min-height: 690px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -25,7 +25,7 @@ body.t-body {
   height: 650px;
   margin: 0 auto;
   background: #fdfcf9;
-  overflow: hidden;
+  overflow: visible;
   container-type: size;
   container-name: hero;
   font-family: 'Geometria', Arial, sans-serif;
@@ -37,7 +37,7 @@ body.t-body {
 
 @media (min-width: 960px) and (max-width: 1199px) {
   .hero-viewport {
-    min-height: 450px;
+    min-height: 490px;
   }
 
   .hero {
@@ -484,7 +484,7 @@ body.t-body {
   }
 
   .hero-viewport {
-    min-height: 510px;
+    min-height: 550px;
     display: block;
     margin-bottom: 0;
     overflow-x: clip;
@@ -745,7 +745,7 @@ body.t-body {
 
 @media (max-width: 639px) {
   .hero-viewport {
-    min-height: 720px;
+    min-height: 760px;
   }
 
   .hero {
@@ -860,7 +860,7 @@ body.t-body {
 
 @media (max-width: 479px) {
   .hero-viewport {
-    min-height: 660px;
+    min-height: 700px;
   }
 
   .hero {
