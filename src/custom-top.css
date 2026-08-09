@@ -875,6 +875,12 @@ body.t-body {
     clip-path: none;
     box-sizing: border-box;
   }
+
+  .info-card:first-child,
+  .info-card:last-child {
+    border-radius: 20px !important;
+    clip-path: inset(0 round 20px);
+  }
 }
 
 @media (max-width: 479px) {
