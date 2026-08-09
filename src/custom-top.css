@@ -775,8 +775,12 @@ body.t-body {
   }
 
   .hero-chrome-stage {
-    transform: translateY(-20%);
+    transform: translateY(calc(-20% + 10px));
     margin-bottom: -11.83%;
+  }
+
+  .hero-chrome-stage .efet-web-elements-fragment {
+    transform: scale(1.35);
   }
 
   .hero-metal-sphere {
