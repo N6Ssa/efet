@@ -65,6 +65,10 @@ body.t-body {
   .hero-kicker {
     transform: translateY(-37px);
   }
+
+  .hero-subtitle {
+    transform: translateY(-20px);
+  }
 }
 
 .hero.hero--chrome-drag {
